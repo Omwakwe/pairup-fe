@@ -1,6 +1,112 @@
-<p>administrator works!</p>
-<a routerLink="/dashboard">dashboard</a><br>
-<a routerLink="admin/new-cohort">cohort</a><br>
-<a routerLink="/new-mentor">mentor</a><br>
-<a routerLink="/new-student">student</a><br>
-<router-outlet></router-outlet>
+<div>
+    <div class="page-wrapper chiller-theme toggled">
+      <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
+        <i class="fas fa-bars"></i>
+      </a>
+      <nav id="sidebar" class="sidebar-wrapper">
+        <div class="sidebar-content">
+          <div class="sidebar-brand">
+            <img class="logo" alt="logo" src="../../../assets/images/PairUp1.jpg" />
+            <div id="close-sidebar">
+              <i class="fas fa-times"></i>
+            </div>
+          </div>
+          <div class="sidebar-header">
+            <div class="user-pic">
+              <img class="img-responsive img-rounded"
+                src="https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg"
+                alt="User picture">
+            </div>
+            <div class="user-info">
+              <span class="user-name">Jhon
+                <strong>Smith</strong>
+              </span>
+              <span class="user-role">Administrator</span>
+            </div>
+          </div>
+          <!-- sidebar-header  -->
+          <div class="sidebar-menu">
+            <ul>
+              <li class="header-menu">
+                <span>Menu</span>
+              </li>
+              <li>
+                <a routerLink="dashboard">
+                  <i class="fa fa-tachometer-alt"></i>
+                  <span>Dashboard</span>
+                </a>
+              </li>
+              <li>
+                <a routerLink="new-cohort">
+                  <i class="fas fa-book"></i>
+                  <span>Add Cohort</span>
+                </a>
+              </li>
+              <li class="sidebar-dropdown">
+                <a href="#">
+                  <!-- <i class="far fa-gem"></i> -->
+                  <i class="fas fa-user"></i>
+                  <span>Add User</span>
+                </a>
+                <div class="sidebar-submenu">
+                  <ul>
+                    <li>
+                      <a routerLink="new-mentor">Technical Mentor</a>
+                    </li>
+                    <li>
+                      <a routerLink="new-student">Student</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="header-menu">
+                <span>Extra</span>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fa fa-folder"></i>
+                  <span>Cohorts</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fa fa-book"></i>
+                  <span>Technical Mentors</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fa fa-calendar"></i>
+                  <span>Students</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <!-- sidebar-menu  -->
+        </div>
+        <!-- sidebar-content  -->
+        <div class="sidebar-footer">
+          <a href="#">
+            <i class="fas fa-sign-out-alt"></i>
+            <span>LOGOUT</span>
+          </a>
+        </div>
+      </nav>
+      <!-- sidebar-wrapper  -->
+      <main class="page-content">
+        <div class="container">
+            <router-outlet></router-outlet>
+        </div>
+      </main>
+      <!-- page-content" -->
+    </div>
+    <!-- page-wrapper -->
+    <!-- using online scripts -->
+  </div>
+
+
+<!-- <a routerLink="dashboard">dashboard</a><br>
+<a routerLink="new-cohort">cohort</a><br>
+<a routerLink="new-mentor">mentor</a><br>
+<a routerLink="new-student">student</a><br>
+<router-outlet></router-outlet> -->

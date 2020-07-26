@@ -11,7 +11,7 @@ import { AddMentorComponent } from './components/administrator/add-mentor/add-me
 import { AddStudentComponent } from './components/administrator/add-student/add-student.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full'},
+  { path: '', redirectTo: '/home', pathMatch: 'full'},
   { path: 'home', component: LandingComponent},
   { path: 'admin', 
     component: AdministratorComponent,
