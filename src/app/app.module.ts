@@ -15,7 +15,6 @@ import { AddMentorComponent } from './components/administrator/add-mentor/add-me
 import { MentorDashboardComponent } from './components/technical-mentor/mentor-dashboard/mentor-dashboard.component';
 import { StudentDashboardComponent } from './components/student/student-dashboard/student-dashboard.component';
 import { PairHistoryComponent } from './components/technical-mentor/pair-history/pair-history.component';
-import { ProfileComponent } from './components/technical-mentor/profile/profile.component';
 import { StudentProfileComponent } from './components/student/student-profile/student-profile.component';
 import { AdminProfileComponent } from './components/administrator/admin-profile/admin-profile.component';
 import { MentorProfileComponent } from './components/technical-mentor/mentor-profile/mentor-profile.component';
@@ -35,7 +34,6 @@ import { MentorProfileComponent } from './components/technical-mentor/mentor-pro
     MentorDashboardComponent,
     StudentDashboardComponent,
     PairHistoryComponent,
-    ProfileComponent,
     StudentProfileComponent,
     AdminProfileComponent,
     MentorProfileComponent
