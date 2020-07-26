@@ -16,6 +16,9 @@ import { MentorDashboardComponent } from './components/technical-mentor/mentor-d
 import { StudentDashboardComponent } from './components/student/student-dashboard/student-dashboard.component';
 import { PairHistoryComponent } from './components/technical-mentor/pair-history/pair-history.component';
 import { ProfileComponent } from './components/technical-mentor/profile/profile.component';
+import { StudentProfileComponent } from './components/student/student-profile/student-profile.component';
+import { AdminProfileComponent } from './components/administrator/admin-profile/admin-profile.component';
+import { MentorProfileComponent } from './components/technical-mentor/mentor-profile/mentor-profile.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,10 @@ import { ProfileComponent } from './components/technical-mentor/profile/profile.
     MentorDashboardComponent,
     StudentDashboardComponent,
     PairHistoryComponent,
-    ProfileComponent
+    ProfileComponent,
+    StudentProfileComponent,
+    AdminProfileComponent,
+    MentorProfileComponent
   ],
   imports: [
     BrowserModule,

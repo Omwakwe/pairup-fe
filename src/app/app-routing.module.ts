@@ -12,6 +12,9 @@ import { AddStudentComponent } from './components/administrator/add-student/add-
 import { MentorDashboardComponent } from './components/technical-mentor/mentor-dashboard/mentor-dashboard.component';
 import { StudentDashboardComponent } from './components/student/student-dashboard/student-dashboard.component';
 import { PairHistoryComponent } from './components/technical-mentor/pair-history/pair-history.component';
+import { StudentProfileComponent } from './components/student/student-profile/student-profile.component';
+import { MentorProfileComponent } from './components/technical-mentor/mentor-profile/mentor-profile.component';
+import { AdminProfileComponent } from './components/administrator/admin-profile/admin-profile.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -23,12 +26,14 @@ const routes: Routes = [
       { path: 'new-cohort', component: AddCohortComponent},
       { path: 'new-mentor', component: AddMentorComponent},
       { path: 'new-student', component: AddStudentComponent},
+      { path: 'profile', component: AdminProfileComponent},
       { path: '', redirectTo: 'dashboard', pathMatch: 'full'},
     ]},
   { path: 'student', 
     component: StudentComponent,
     children: [
       { path: 'dashboard', component: StudentDashboardComponent},
+      { path: 'profile', component: StudentProfileComponent},
       { path: '', redirectTo: 'dashboard', pathMatch: 'full'},
     ]},
   { path: 'pairs', component: StudentPairsComponent},
@@ -38,6 +43,7 @@ const routes: Routes = [
       { path: 'dashboard', component: MentorDashboardComponent},
       { path: 'pairs', component: StudentPairsComponent},
       { path: 'history', component: PairHistoryComponent},
+      { path: 'profile', component: MentorProfileComponent},
       { path: '', redirectTo: 'dashboard', pathMatch: 'full'},
     ]},
 ];
