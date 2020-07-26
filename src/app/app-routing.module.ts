@@ -9,6 +9,7 @@ import { AdminDashboardComponent } from './components/administrator/admin-dashbo
 import { AddCohortComponent } from './components/administrator/add-cohort/add-cohort.component';
 import { AddMentorComponent } from './components/administrator/add-mentor/add-mentor.component';
 import { AddStudentComponent } from './components/administrator/add-student/add-student.component';
+import { MentorDashboardComponent } from './components/technical-mentor/mentor-dashboard/mentor-dashboard.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -24,7 +25,13 @@ const routes: Routes = [
    ]},
   { path: 'student', component: StudentComponent},
   { path: 'pairs', component: StudentPairsComponent},
-  { path: 'technical-mentor', component: TechnicalMentorComponent},
+  { path: 'technical-mentor', 
+    component: TechnicalMentorComponent,
+    children: [
+      { path: 'dashboard', component: MentorDashboardComponent},
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full'},
+    ]
+  },
 ];
 
 @NgModule({
