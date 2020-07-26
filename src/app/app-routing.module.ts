@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { LandingComponent } from './components/landing/landing.component';
 import { AdministratorComponent } from './components/administrator/administrator.component';
 import { StudentComponent } from './components/student/student.component';
-import { StudentPairsComponent } from './components/student-pairs/student-pairs.component';
+import { StudentPairsComponent } from './components/technical-mentor/student-pairs/student-pairs.component';
 import { TechnicalMentorComponent } from './components/technical-mentor/technical-mentor.component';
 import { AdminDashboardComponent } from './components/administrator/admin-dashboard/admin-dashboard.component';
 import { AddCohortComponent } from './components/administrator/add-cohort/add-cohort.component';
@@ -29,6 +29,7 @@ const routes: Routes = [
     component: TechnicalMentorComponent,
     children: [
       { path: 'dashboard', component: MentorDashboardComponent},
+      { path: 'pairs', component: StudentPairsComponent},
       { path: '', redirectTo: 'dashboard', pathMatch: 'full'},
     ]
   },
