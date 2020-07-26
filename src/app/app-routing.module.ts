@@ -11,6 +11,7 @@ import { AddMentorComponent } from './components/administrator/add-mentor/add-me
 import { AddStudentComponent } from './components/administrator/add-student/add-student.component';
 import { MentorDashboardComponent } from './components/technical-mentor/mentor-dashboard/mentor-dashboard.component';
 import { StudentDashboardComponent } from './components/student/student-dashboard/student-dashboard.component';
+import { PairHistoryComponent } from './components/technical-mentor/pair-history/pair-history.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -36,6 +37,7 @@ const routes: Routes = [
     children: [
       { path: 'dashboard', component: MentorDashboardComponent},
       { path: 'pairs', component: StudentPairsComponent},
+      { path: 'history', component: PairHistoryComponent},
       { path: '', redirectTo: 'dashboard', pathMatch: 'full'},
     ]},
 ];
