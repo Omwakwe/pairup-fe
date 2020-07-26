@@ -10,6 +10,7 @@ import { AddCohortComponent } from './components/administrator/add-cohort/add-co
 import { AddMentorComponent } from './components/administrator/add-mentor/add-mentor.component';
 import { AddStudentComponent } from './components/administrator/add-student/add-student.component';
 import { MentorDashboardComponent } from './components/technical-mentor/mentor-dashboard/mentor-dashboard.component';
+import { StudentDashboardComponent } from './components/student/student-dashboard/student-dashboard.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -22,8 +23,13 @@ const routes: Routes = [
       { path: 'new-mentor', component: AddMentorComponent},
       { path: 'new-student', component: AddStudentComponent},
       { path: '', redirectTo: 'dashboard', pathMatch: 'full'},
-   ]},
-  { path: 'student', component: StudentComponent},
+    ]},
+  { path: 'student', 
+    component: StudentComponent,
+    children: [
+      { path: 'dashboard', component: StudentDashboardComponent},
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full'},
+    ]},
   { path: 'pairs', component: StudentPairsComponent},
   { path: 'technical-mentor', 
     component: TechnicalMentorComponent,
@@ -31,8 +37,7 @@ const routes: Routes = [
       { path: 'dashboard', component: MentorDashboardComponent},
       { path: 'pairs', component: StudentPairsComponent},
       { path: '', redirectTo: 'dashboard', pathMatch: 'full'},
-    ]
-  },
+    ]},
 ];
 
 @NgModule({
