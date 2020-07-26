@@ -9,6 +9,9 @@ import { LandingComponent } from './components/landing/landing.component';
 import { StudentComponent } from './components/student/student.component';
 import { StudentPairsComponent } from './components/student-pairs/student-pairs.component';
 import { AdminDashboardComponent } from './components/administrator/admin-dashboard/admin-dashboard.component';
+import { AddCohortComponent } from './components/administrator/add-cohort/add-cohort.component';
+import { AddStudentComponent } from './components/administrator/add-student/add-student.component';
+import { AddMentorComponent } from './components/administrator/add-mentor/add-mentor.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { AdminDashboardComponent } from './components/administrator/admin-dashbo
     LandingComponent,
     StudentComponent,
     StudentPairsComponent,
-    AdminDashboardComponent
+    AdminDashboardComponent,
+    AddCohortComponent,
+    AddStudentComponent,
+    AddMentorComponent
   ],
   imports: [
     BrowserModule,
