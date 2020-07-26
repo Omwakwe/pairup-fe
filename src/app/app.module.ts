@@ -13,6 +13,7 @@ import { AddCohortComponent } from './components/administrator/add-cohort/add-co
 import { AddStudentComponent } from './components/administrator/add-student/add-student.component';
 import { AddMentorComponent } from './components/administrator/add-mentor/add-mentor.component';
 import { MentorDashboardComponent } from './components/technical-mentor/mentor-dashboard/mentor-dashboard.component';
+import { StudentDashboardComponent } from './components/student/student-dashboard/student-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { MentorDashboardComponent } from './components/technical-mentor/mentor-d
     AddCohortComponent,
     AddStudentComponent,
     AddMentorComponent,
-    MentorDashboardComponent
+    MentorDashboardComponent,
+    StudentDashboardComponent
   ],
   imports: [
     BrowserModule,
