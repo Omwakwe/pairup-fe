@@ -6,6 +6,9 @@ import { StudentComponent } from './components/student/student.component';
 import { StudentPairsComponent } from './components/student-pairs/student-pairs.component';
 import { TechnicalMentorComponent } from './components/technical-mentor/technical-mentor.component';
 import { AdminDashboardComponent } from './components/administrator/admin-dashboard/admin-dashboard.component';
+import { AddCohortComponent } from './components/administrator/add-cohort/add-cohort.component';
+import { AddMentorComponent } from './components/administrator/add-mentor/add-mentor.component';
+import { AddStudentComponent } from './components/administrator/add-student/add-student.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -13,8 +16,11 @@ const routes: Routes = [
   { path: 'admin', 
     component: AdministratorComponent,
     children: [
+      { path: 'dashboard', component: AdminDashboardComponent},
+      { path: 'new-cohort', component: AddCohortComponent},
+      { path: 'new-mentor', component: AddMentorComponent},
+      { path: 'new-student', component: AddStudentComponent},
       { path: '', redirectTo: 'dashboard', pathMatch: 'full'},
-      { path: 'dashboard', component: AdminDashboardComponent}
    ]},
   { path: 'student', component: StudentComponent},
   { path: 'pairs', component: StudentPairsComponent},
