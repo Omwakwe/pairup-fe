@@ -8,6 +8,7 @@ import { TechnicalMentorComponent } from './components/technical-mentor/technica
 import { LandingComponent } from './components/landing/landing.component';
 import { StudentComponent } from './components/student/student.component';
 import { StudentPairsComponent } from './components/student-pairs/student-pairs.component';
+import { AdminDashboardComponent } from './components/administrator/admin-dashboard/admin-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { StudentPairsComponent } from './components/student-pairs/student-pairs.
     TechnicalMentorComponent,
     LandingComponent,
     StudentComponent,
-    StudentPairsComponent
+    StudentPairsComponent,
+    AdminDashboardComponent
   ],
   imports: [
     BrowserModule,
