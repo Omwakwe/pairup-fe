@@ -1,135 +1,149 @@
 /* 
 ** Layout, Text & Colors 
 */
-body{
-    overflow-x: hidden;
+body {
+  overflow-x: hidden;
 }
-.landing-wrapper{
-    position: relative;
-    width: 100%;
-    height: 100vh;
-background: url('../../../assets/images/landing1.jpg') no-repeat center center/cover;
+
+.landing-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url('../../../assets/images/landing1.jpg') no-repeat center center/cover;
 }
+
 .landing-wrapper::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    /* background: rgba(0, 0, 0, 0.6); */
-    background: rgba(0, 0, 0, 0.856);
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  /* background: rgba(0, 0, 0, 0.6); */
+  background: rgba(0, 0, 0, 0.856);
 }
+
 .logo {
-    height: 3.8rem;
-    margin-top: 2rem;
-    z-index: 2;
-position: relative;
-margin-bottom: 1rem;
+  height: 3.8rem;
+  margin-top: 2rem;
+  z-index: 2;
+  position: relative;
+  margin-bottom: 1rem;
 }
-.landing-text{
-    z-index: 2;
-position: relative;
-color: #fff;
+
+.landing-text {
+  z-index: 2;
+  position: relative;
+  color: #fff;
 }
+
 .container {
-margin: 0 auto;
-z-index: 2;
-position: relative;
-padding: 13rem 0rem 0;
+  margin: 0 auto;
+  z-index: 2;
+  position: relative;
+  padding: 13rem 0rem 0;
 }
-.landing p{
+
+.landing p {
   margin-bottom: 0.7rem;
 }
+
 /* Cards */
 .card-column {
-display: flex;
-flex-direction: row;
-flex-wrap: wrap;
-justify-content: center;
-align-content: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
 }
 
 .landing .card {
-width: 18rem;
-max-width: 20rem;
-margin: 2rem;
-position: relative;
-background: #14213D;
-color: #fff;
-cursor: pointer;
+  width: 18rem;
+  max-width: 20rem;
+  margin: 2rem;
+  position: relative;
+  background: #14213D;
+  color: #fff;
+  cursor: pointer;
 }
 
 .border {
-position: absolute;
-width: 100%;
-height: 100%;
-padding: 6px;
-border: 1px solid #fff;
-opacity: 0.5;
-left: -7px;
-top: -7px;
-}
-.landing-role{
-  font-weight: 800;
-  font-size: 1.1rem ;
-}
-.landing .card1 .card-message {
-position: relative;
-width: 90%;
-margin: 6rem auto 2rem;
-}
-.landing .card2 .card-message {
-position: relative;
-width: 90%;
-margin: 6rem auto 2rem;
-}
-.landing .card0 .card-message {
-position: relative;
-width: 90%;
-margin: 5rem auto 2rem;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 6px;
+  border: 1px solid #fff;
+  opacity: 0.5;
+  left: -7px;
+  top: -7px;
 }
 
-.card-message p a{
+.landing-role {
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+.landing .card1 .card-message {
+  position: relative;
+  width: 90%;
+  margin: 6rem auto 2rem;
+}
+
+.landing .card2 .card-message {
+  position: relative;
+  width: 90%;
+  margin: 6rem auto 2rem;
+}
+
+.landing .card0 .card-message {
+  position: relative;
+  width: 90%;
+  margin: 5rem auto 2rem;
+}
+
+.card-message p a {
   color: #ea4C89;
 }
-.card0 > img {
-/* width: 10rem; */
-height: 5.5rem;
-position: absolute;
-object-fit: cover;
-top: -6%;
-left: -6%;
-}
-.card2 > img {
-width: 8rem;
-height: 6.5rem;
-position: absolute;
-object-fit: cover;
-top: -9%;
-left: -15%;
+
+.card0>img {
+  /* width: 10rem; */
+  height: 5.5rem;
+  position: absolute;
+  object-fit: cover;
+  top: -6%;
+  left: -6%;
 }
 
-.card1 > img {
-/* width: 10rem; */
-height: 6rem;
-position: absolute;
-object-fit: cover;
-top: -6%;
-left: -13%;
+.card2>img {
+  width: 8rem;
+  height: 6.5rem;
+  position: absolute;
+  object-fit: cover;
+  top: -9%;
+  left: -15%;
 }
+
+.card1>img {
+  /* width: 10rem; */
+  height: 6rem;
+  position: absolute;
+  object-fit: cover;
+  top: -6%;
+  left: -13%;
+}
+
 /* 
 ** Media Queries
 */
 
 @media screen and (max-width: 600px) {
-.card-column {
+  .card-column {
     width: 50%;
     padding: 4%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
   }
-  
+
 }
