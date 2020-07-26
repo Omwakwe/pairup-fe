@@ -1,4 +1,32 @@
-<p>landing works!</p>
-<a routerLink= "/admin">Admin</a>
-<a routerLink= "/technical-mentor">TM</a>
-<a routerLink= "/student">Student</a>
+<div class="landing-wrapper text-center">
+    <div class="landing-logo"><img class="logo" alt="logo" src="./logo.png" /></div>
+    <div class="landing-text">Student pairing made easier</div>
+    <div class="container landing">
+        <div class="card-column column-0">
+            <div class="card card0">
+                <div class="border"></div>
+                <img src="./fteacher.png" />
+                <div class="card-message">
+                    <p class="landing-role">Technical mentor?</p>
+                    <p><a routerLink= "/technical-mentor">Sign in</a> to generate or view student pairs </p>
+                </div>
+            </div>
+            <div class="card card1">
+                <div class="border"></div>
+                <img src="./admin.png" />
+                <div class="card-message">
+                    <p class="landing-role">Administrator?</p>
+                    <p><a routerLink= "/admin">Sign in</a> to add students and technical mentors in your institution </p>
+                </div>
+            </div>
+            <div class="card card2">
+                <div class="border"></div>
+                <img src="./student.png" />
+                <div class="card-message">
+                    <p class="landing-role">Student?</p>
+                    <p><a routerLink= "/student">Sign in</a> to view your pair for the week </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
