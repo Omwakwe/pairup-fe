@@ -1,1 +1,143 @@
-/* You can add global styles to this file, and also import other style files */
+/*------scroll bar---------------------*/
+::-webkit-scrollbar {
+  width: 5px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #14213D;
+  border: 0px none #ffffff;
+  border-radius: 0px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #14213D;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: #14213D;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-track:hover {
+  background: transparent;
+}
+
+::-webkit-scrollbar-track:active {
+  background: transparent;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/*-----------------------------calendar-------------------------------------------------*/
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+a {
+  text-decoration: none;
+}
+
+.calendar-wrapper {
+  line-height: 1.5;
+  width: 19rem;
+  margin: 0 auto 2em;
+  padding: 2em;
+  border: 1px solid #dcdcff;
+  border-radius: 5px;
+  background: #fff;
+}
+
+table {
+  clear: both;
+  width: 100%;
+  font-size: 1rem;
+  height: 20rem;
+  border: 1px solid #dcdcff;
+  border-radius: 3px;
+  border-collapse: collapse;
+  color: #14213D;
+}
+
+td {
+  height: 3rem;
+  text-align: center;
+  vertical-align: middle;
+  border-right: 1px solid #dcdcff;
+  border-top: 1px solid #dcdcff;
+  font-size: 0.8rem;
+}
+
+td.not-current {
+  color: #c0c0c0;
+}
+
+td.today {
+  font-weight: 900;
+  color: #ea4C89;
+  font-size: 1.5em;
+}
+
+thead td {
+  border: none;
+  color: #ea4C89;
+  text-transform: uppercase;
+  font-size: 1.5em;
+  font-weight: 900;
+}
+
+#btnPrev {
+  float: left;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+#btnPrev:before {
+  content: '\f104';
+  font-family: FontAwesome;
+  padding-right: 6px;
+}
+
+#btnNext {
+  float: right;
+  margin-bottom: 20px;
+}
+
+#btnNext:after {
+  content: '\f105';
+  font-family: FontAwesome;
+  padding-left: 6px;
+}
+
+#btnPrev,
+#btnNext {
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 1em;
+  color: #14213D;
+  cursor: pointer;
+  /* font-family: "Roboto Condensed", sans-serif; */
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+#btnPrev:hover,
+#btnNext:hover {
+  color: #ea4C89;
+  font-weight: bold;
+}

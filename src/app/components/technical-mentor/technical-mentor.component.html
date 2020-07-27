@@ -1,0 +1,94 @@
+<div class="page-wrapper chiller-theme toggled">
+  <a id="show-sidebar" class="btn btn-sm btn-dark">
+    <i class="fas fa-bars"></i>
+  </a>
+  <nav id="sidebar" class="sidebar-wrapper">
+    <div class="sidebar-content">
+      <div class="sidebar-brand">
+        <img class="logo" alt="logo" src="../../../assets/images/PairUp1.jpg" />
+        <div id="close-sidebar">
+          <i class="fas fa-times"></i>
+        </div>
+      </div>
+      <div class="sidebar-header">
+        <div class="user-pic">
+          <img class="img-responsive img-rounded"
+            src="https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg"
+            alt="User picture">
+        </div>
+        <div class="user-info">
+          <span class="user-name">John
+            <strong>Smith</strong>
+          </span>
+          <span class="user-role">Technical Mentor</span>
+        </div>
+      </div>
+      <!-- sidebar-header  -->
+      <div class="sidebar-menu">
+        <ul>
+          <li class="header-menu">
+            <span>Menu</span>
+          </li>
+          <li>
+            <a routerLink="dashboard">
+              <i class="fa fa-tachometer-alt"></i>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a routerLink="pairs">
+              <i class="fas fa-user-friends"></i>
+              <span>Student Pairs</span>
+            </a>
+          </li>
+          <li class="sidebar-dropdown">
+            <a>
+              <i class="fas fa-history"></i>
+              <span>History</span>
+            </a>
+            <div class="sidebar-submenu">
+              <ul>
+                <li>
+                  <a routerLink="history">Week 1</a>
+                </li>
+                <li>
+                  <a routerLink="history">Week 2</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="header-menu">
+            <span>Extra</span>
+          </li>
+          <li>
+            <a routerLink="mentor-profile">
+              <i class="fas fa-id-card"></i>
+              <span>My Profile</span>
+            </a>
+          </li>
+          <li>
+            <a>
+              <i class="fas fa-users"></i>
+              <span>Students</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- sidebar-menu  -->
+    </div>
+    <!-- sidebar-content  -->
+    <div class="sidebar-footer">
+      <a>
+        <i class="fas fa-sign-out-alt"></i>
+        <span>LOGOUT</span>
+      </a>
+    </div>
+  </nav>
+  <!-- sidebar-wrapper  -->
+  <main class="page-content">
+    <div class="container">
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+  <!-- page-content" -->
+</div>

@@ -1,0 +1,22 @@
+.student-container{
+    padding: 4rem 2rem 2rem;
+    height: 100vh;
+}
+h1{
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    text-align: center;
+    font-weight: 800;
+    color: #14213D;
+}
+form{
+    padding: 2rem 3rem;
+}
+.btn{
+    background: #ea4c89;
+    color: #fff;
+}
+.btn:hover{
+    background: #14213D;
+    color: #fff;
+}
