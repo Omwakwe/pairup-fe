@@ -85,6 +85,12 @@
                   <span>Students</span>
                 </a>
               </li>
+              <li *ngFor="let cohort of cohorts">
+                <a>
+                  <i class="fas fa-users"></i>
+                  <span>{{cohort.name}}</span>
+                </a>
+              </li>
             </ul>
           </div>
           <!-- sidebar-menu  -->

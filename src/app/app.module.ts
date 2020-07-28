@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +20,7 @@ import { PairHistoryComponent } from './components/technical-mentor/pair-history
 import { StudentProfileComponent } from './components/student/student-profile/student-profile.component';
 import { AdminProfileComponent } from './components/administrator/admin-profile/admin-profile.component';
 import { MentorProfileComponent } from './components/technical-mentor/mentor-profile/mentor-profile.component';
+import { AdminLoginComponent } from './components/administrator/admin-login/admin-login.component';
 
 @NgModule({
   declarations: [
@@ -36,13 +39,18 @@ import { MentorProfileComponent } from './components/technical-mentor/mentor-pro
     PairHistoryComponent,
     StudentProfileComponent,
     AdminProfileComponent,
-    MentorProfileComponent
+    MentorProfileComponent,
+    AdminLoginComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+    
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
