@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Open+Sans&display=swap');
 @keyframes swing {
     0% {
       transform: rotate(0deg);
@@ -47,8 +48,6 @@
       opacity: 0;
     }
   }
-  
-  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Open+Sans&display=swap');
   
   body {
     font-size: 0.9rem;
@@ -588,4 +587,6 @@
     }
   }
   
-  
+  .cohort{
+    color: #444;
+  }

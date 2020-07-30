@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./administrator.component.css']
 })
 export class AdministratorComponent implements OnInit {
-
+  cohorts = []; 
+  
   constructor() { }
 
   ngOnInit(): void {

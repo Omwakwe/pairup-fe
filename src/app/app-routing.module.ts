@@ -15,15 +15,19 @@ import { PairHistoryComponent } from './components/technical-mentor/pair-history
 import { StudentProfileComponent } from './components/student/student-profile/student-profile.component';
 import { MentorProfileComponent } from './components/technical-mentor/mentor-profile/mentor-profile.component';
 import { AdminProfileComponent } from './components/administrator/admin-profile/admin-profile.component';
+import { AdminLoginComponent } from './components/administrator/admin-login/admin-login.component';
+import { AllCohortsComponent } from './components/administrator/all-cohorts/all-cohorts.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full'},
   { path: 'home', component: LandingComponent},
+  { path: 'admin-login', component: AdminLoginComponent},
   { path: 'admin', 
     component: AdministratorComponent,
     children: [
       { path: 'dashboard', component: AdminDashboardComponent},
       { path: 'new-cohort', component: AddCohortComponent},
+      { path: 'all-cohorts', component: AllCohortsComponent},
       { path: 'new-mentor', component: AddMentorComponent},
       { path: 'new-student', component: AddStudentComponent},
       { path: 'admin-profile', component: AdminProfileComponent},

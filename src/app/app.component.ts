@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-
+import { ApiService } from './services/api.service';
+// import { getAllCohorts } from './services/api.service'; 
 //CALENDAR
 function myCalendar(){
   var Cal = function(divId) {
@@ -165,11 +166,29 @@ function myCalendar(){
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers: [ApiService]
 })
 export class AppComponent {
   title = 'pairup-fe';
   ngOnInit(){
     myCalendar()
   }
+
+  cohorts = [];
+  constructor(private api:ApiService){
+    this.getAllCohorts();
+  }
+
+  getAllCohorts = () => {
+    this.api.getAllCohorts().subscribe(
+      data => {
+        this.cohorts = data;
+      },
+      error => {
+        console.log(error);
+      }
+    )
+  }
+
 }
