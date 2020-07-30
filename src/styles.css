@@ -141,3 +141,38 @@ thead td {
   color: #ea4C89;
   font-weight: bold;
 }
+
+.flex-grid .parentdiv {
+  flex: 1;
+  margin: 0 20px 20px 0;
+  border: 1px solid #ddd;
+  background: #fff;
+}
+
+.flex2 .parentdiv:first-child {
+  flex: 1;
+  margin: 0 20px 20px 0;
+  border: 1px solid #ddd;
+  background: #fff;
+}
+.quote{
+  margin: 2rem 3rem;
+  font-size: 1rem;
+}
+
+q:before,
+blockquote:before {
+  content: open-quote;
+}
+
+q:after,
+blockquote:after {
+  content: close-quote;
+}
+
+q:before,
+q:after {
+  color: #ea4C89;
+  font-size: 1.2rem;
+  font-weight: 900;
+}
