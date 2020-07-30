@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 export class ApiService {
 
   baseurl = "https://pair-app-v1.herokuapp.com/api/";
+  cohorturl = "https://pair-app-v1.herokuapp.com/api/cohorts/cohorts/";
   httpHeaders = new HttpHeaders({'Content-Type': 'application/json'})
 
   constructor(private http: HttpClient) { }
@@ -16,10 +17,8 @@ export class ApiService {
     return this.http.get(this.baseurl + 'cohorts/cohorts',
     {headers: this.httpHeaders})
   }
+
   RegisterCohort(cohort): Observable<any>{
-    const body = {cohort_name: cohort.cohort_name};
-    return this.http.post(this.baseurl + 'cohorts/cohorts', 
-    body,
-    {headers: this.httpHeaders});
+    return this.http.post<any>(this.cohorturl, cohort, {headers: this.httpHeaders});
   }
 }

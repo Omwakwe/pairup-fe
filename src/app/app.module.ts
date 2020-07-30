@@ -21,6 +21,7 @@ import { StudentProfileComponent } from './components/student/student-profile/st
 import { AdminProfileComponent } from './components/administrator/admin-profile/admin-profile.component';
 import { MentorProfileComponent } from './components/technical-mentor/mentor-profile/mentor-profile.component';
 import { AdminLoginComponent } from './components/administrator/admin-login/admin-login.component';
+import { AllCohortsComponent } from './components/administrator/all-cohorts/all-cohorts.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { AdminLoginComponent } from './components/administrator/admin-login/admi
     AdminProfileComponent,
     MentorProfileComponent,
     AdminLoginComponent,
+    AllCohortsComponent,
   ],
   imports: [
     BrowserModule,

@@ -8,25 +8,30 @@ import { ApiService } from '../../../services/api.service';
   providers: [ApiService]
 })
 export class AddCohortComponent implements OnInit {
-  
+
   cohort;
-  cohorts = [];
-  cohort_name;
+  returned_cohort;
+  errorMessage = 'Error when creating cohort'
   constructor(private api:ApiService){
     this.RegisterCohort();
   }
+  ngOnInit() {
+    this.cohort ={
+      cohort_name: ''
+    };
+  }
 
   RegisterCohort = () => {
-    this.api.RegisterCohort(this.cohort).subscribe(
-      data => {
-        this.cohorts.push(data);
+    // alert("COHORT" + this.cohort.cohort_name)
+    this.api.RegisterCohort(this.cohort).subscribe({
+      next: (data) => {
+        this.returned_cohort = data;
+        alert('Cohort ' + this.returned_cohort.cohort_name + ' has been created')
       },
-      error => {
-        console.log(error);
-      }
-    )
-  }
-  ngOnInit(): void {
-  }
-
+      error: (err) => {
+        (this.errorMessage = err);
+        // alert(err);
+      },
+  });
+}
 }

@@ -16,6 +16,7 @@ import { StudentProfileComponent } from './components/student/student-profile/st
 import { MentorProfileComponent } from './components/technical-mentor/mentor-profile/mentor-profile.component';
 import { AdminProfileComponent } from './components/administrator/admin-profile/admin-profile.component';
 import { AdminLoginComponent } from './components/administrator/admin-login/admin-login.component';
+import { AllCohortsComponent } from './components/administrator/all-cohorts/all-cohorts.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -26,6 +27,7 @@ const routes: Routes = [
     children: [
       { path: 'dashboard', component: AdminDashboardComponent},
       { path: 'new-cohort', component: AddCohortComponent},
+      { path: 'all-cohorts', component: AllCohortsComponent},
       { path: 'new-mentor', component: AddMentorComponent},
       { path: 'new-student', component: AddStudentComponent},
       { path: 'admin-profile', component: AdminProfileComponent},
