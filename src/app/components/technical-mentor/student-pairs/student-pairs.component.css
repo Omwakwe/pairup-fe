@@ -74,3 +74,27 @@
           opacity: 1;
       }
   }
+
+  .row{
+      margin-bottom: 1rem;
+  }
+  button{
+    background: #ea4c89;
+    border: 0;
+    border-radius: 1.4em;
+    color: #fff;
+    font: 1rem 'Open Sans', sans-serif;
+    /* margin: 1.7em auto .6em; */
+    outline: none;
+    padding: .6em;
+    transition: all .15s ease-out;
+    -webkit-transition: all .15s ease-out;
+    /* width: 100%; */
+  }   
+  button:hover{
+    background: #14213D;
+    cursor: pointer;
+  }
+  button:focus{
+    outline: none;
+  }
