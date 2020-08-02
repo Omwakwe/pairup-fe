@@ -4,7 +4,8 @@ import { AllMentorsService } from "../../../services/all-mentors.service";
 @Component({
   selector: 'app-all-mentors',
   templateUrl: './all-mentors.component.html',
-  styleUrls: ['./all-mentors.component.css']
+  styleUrls: ['./all-mentors.component.css'],
+  providers: [AllMentorsService]
 })
 export class AllMentorsComponent implements OnInit {
 
