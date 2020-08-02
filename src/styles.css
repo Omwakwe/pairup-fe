@@ -141,3 +141,7 @@ thead td {
   color: #ea4C89;
   font-weight: bold;
 }
+
+.fa-bars:before{
+  color: #fff;
+}
