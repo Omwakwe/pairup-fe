@@ -7,15 +7,15 @@ import { Observable } from 'rxjs';
 })
 export class AllMentorsService {
 
-  baseurl = "https://pair-app-v1.herokuapp.com/api/";
-  mentorurl = "https://pair-app-v1.herokuapp.com/api/account/mentors/"
+  baseurl = "https://pair-app-v1.herokuapp.com";
+  mentorurl = "https://pair-app-v1.herokuapp.com/mentors"
   httpHeaders = new HttpHeaders({'Content-Type': 'application/json'})
 
 
   constructor(private http: HttpClient) { }
 
   getAllMentors(): Observable<any>{
-    return this.http.get(this.baseurl + 'account/mentors/',
+    return this.http.get(this.baseurl + '/mentors/',
     {headers: this.httpHeaders})
   }
 

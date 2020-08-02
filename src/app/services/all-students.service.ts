@@ -6,15 +6,15 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AllStudentsService {
-  baseurl = "https://pair-app-v1.herokuapp.com/api/";
-  studenturl = "https://pair-app-v1.herokuapp.com/api/account/students/"
+  baseurl = "https://pair-app-v1.herokuapp.com";
+  studenturl = "https://pair-app-v1.herokuapp.com/students"
   httpHeaders = new HttpHeaders({'Content-Type': 'application/json'})
 
 
   constructor(private http: HttpClient) { }
 
   getAllStudents(): Observable<any>{
-    return this.http.get(this.baseurl + 'account/students/',
+    return this.http.get(this.baseurl + '/students/',
     {headers: this.httpHeaders})
   }
 
