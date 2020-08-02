@@ -1,1 +1,24 @@
-<p>all-mentors works!</p>
+<h2>mentors</h2>
+
+<table>
+  <tr>
+
+    <th>email</th>
+    <th>first name</th>
+    <th>last name</th>
+    <th>username</th>
+    <th>cohort</th>
+    <th>phone</th>
+  </tr>
+  
+  <tr *ngFor = "let mentor of mentors">
+
+    <td>{{mentor.email}}</td>
+    <td>{{mentor.first_name}}</td>
+    <td>{{mentor.last_name}}</td>
+    <td>{{mentor.user_name}}</td>
+    <td>{{mentor.cohort}}</td>
+    <td>{{mentor.phone}}</td>
+  </tr>
+  
+  </table>
