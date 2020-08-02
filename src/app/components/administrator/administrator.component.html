@@ -85,7 +85,9 @@
                   <span>Students</span>
                 </a>
               </li>
-              
+              <div class="data" *ngFor='let admin of admins'>
+                <div class="fade-in">{{admin.first_name}}</div>
+              </div>
             </ul>
           </div>
           <!-- sidebar-menu  -->
