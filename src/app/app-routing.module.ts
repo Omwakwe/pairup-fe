@@ -30,6 +30,8 @@ const routes: Routes = [
       { path: 'all-cohorts', component: AllCohortsComponent},
       { path: 'new-mentor', component: AddMentorComponent},
       { path: 'new-student', component: AddStudentComponent},
+      { path: 'all-mentors', component: AllMentorsComponent},
+      { path: 'all-students', component: AllStudentsComponent},
       { path: 'admin-profile', component: AdminProfileComponent},
       { path: '', redirectTo: 'dashboard', pathMatch: 'full'},
     ]},
