@@ -9,6 +9,8 @@ export class ApiService {
 
   baseurl = "https://pair-app-v1.herokuapp.com/api/";
   cohorturl = "https://pair-app-v1.herokuapp.com/api/cohorts/cohorts/";
+  adminurl = "https://pair-app-v1.herokuapp.com/admins/";
+
   httpHeaders = new HttpHeaders({'Content-Type': 'application/json'})
 
   constructor(private http: HttpClient) { }
@@ -20,5 +22,10 @@ export class ApiService {
 
   RegisterCohort(cohort): Observable<any>{
     return this.http.post<any>(this.cohorturl, cohort, {headers: this.httpHeaders});
+  }
+
+  getAllAdmins(): Observable<any>{
+    return this.http.get(this.adminurl,
+    {headers: this.httpHeaders})
   }
 }
