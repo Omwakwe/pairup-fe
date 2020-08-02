@@ -9,7 +9,24 @@ import {  AllStudentsService } from "../../../services/all-students.service";
 })
 export class AllStudentsComponent implements OnInit {
 
-  constructor() { }
+  students = [];
+
+  getAllStudents = () => {
+    this.api.getAllStudents().subscribe(
+      data => {
+        this.students = data;
+        console.log(this.students)
+      },
+      error => {
+        console.log(error);
+      }
+    )
+  }
+
+  constructor(private api:AllStudentsService){
+    this.getAllStudents();
+    
+  }
 
   ngOnInit(): void {
   }
