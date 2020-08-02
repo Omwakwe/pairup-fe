@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AllMentorsService } from "../../../services/all-mentors.service";
 
 @Component({
   selector: 'app-all-mentors',

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {  AllStudentsService } from "../../../services/all-students.service";
 
 @Component({
   selector: 'app-all-students',
