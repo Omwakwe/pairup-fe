@@ -1,1 +1,25 @@
-<p>all-students works!</p>
+<h2>students</h2>
+<table>
+  <tr>
+    <th>Id</th>
+    <th>email</th>
+    <th>first name</th>
+    <th>last name</th>
+    <th>username</th>
+    <th>cohort</th>
+    <th>bio</th>
+    <th>phone</th>
+  </tr>
+  
+  <tr *ngFor = "let student of students">
+    <td>{{student.id}}</td>
+    <td>{{student.email}}</td>
+    <td>{{student.first_name}}</td>
+    <td>{{student.last_name}}</td>
+    <td>{{student.user_name}}</td>
+    <td>{{student.cohort}}</td>
+    <td>{{student.bio}}</td>
+    <td>{{student.phone}}</td>
+  </tr>
+  
+  </table>
