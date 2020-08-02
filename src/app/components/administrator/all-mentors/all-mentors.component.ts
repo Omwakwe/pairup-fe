@@ -9,7 +9,25 @@ import { AllMentorsService } from "../../../services/all-mentors.service";
 })
 export class AllMentorsComponent implements OnInit {
 
-  constructor() { }
+
+  mentors = [];
+
+  getAllMentors = () => {
+    this.api.getAllMentors().subscribe(
+      data => {
+        this.mentors = data;
+        console.log(this.mentors)
+      },
+      error => {
+        console.log(error);
+      }
+    )
+  }
+
+  constructor(private api:AllMentorsService){
+    this.getAllMentors();
+    
+  }
 
   ngOnInit(): void {
   }
