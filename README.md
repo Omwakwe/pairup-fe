@@ -1,10 +1,18 @@
 # PairupFe
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.4.
 
-## Development server
+## Description
+An application that automatically pairs students
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+## Setup/Installation Requirements
+To setup this project, you will need to access it from github then :
+- Run `git clone https://github.com/Omwakwe/pairup-fe` on your terminal.
+- Navigate to the directory
+- Run `npm install --save-dev @angular-devkit/build-angular`
+- Run `ng serve`
+- Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
 
 ## Code scaffolding
 
