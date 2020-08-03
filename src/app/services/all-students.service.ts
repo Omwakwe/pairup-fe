@@ -18,7 +18,7 @@ export class AllStudentsService {
     {headers: this.httpHeaders})
   }
 
-  RegisterStudents(student): Observable<any>{
+  RegisterStudent(student): Observable<any>{
     return this.http.post<any>(this.studenturl, student, {headers: this.httpHeaders});
   }
 
