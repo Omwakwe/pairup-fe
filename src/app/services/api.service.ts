@@ -8,15 +8,16 @@ import { Observable } from 'rxjs';
 export class ApiService {
 
   baseurl = "https://pair-app-v1.herokuapp.com/api/";
-  cohorturl = "https://pair-app-v1.herokuapp.com/api/cohorts/cohorts/";
+  cohorturl = "https://pair-app-v1.herokuapp.com/cohorts/";
   adminurl = "https://pair-app-v1.herokuapp.com/admins/";
+  adminloginurl = "https://pair-app-v1.herokuapp.com/auth/jwt/token/";
 
   httpHeaders = new HttpHeaders({'Content-Type': 'application/json'})
 
   constructor(private http: HttpClient) { }
 
   getAllCohorts(): Observable<any>{
-    return this.http.get(this.baseurl + 'cohorts/cohorts',
+    return this.http.get(this.cohorturl,
     {headers: this.httpHeaders})
   }
 
@@ -27,5 +28,13 @@ export class ApiService {
   getAllAdmins(): Observable<any>{
     return this.http.get(this.adminurl,
     {headers: this.httpHeaders})
+  }
+  
+  loginAdmin(user): Observable<any>{
+    return this.http.post<any>(this.adminloginurl, user, {headers: this.httpHeaders});
+  }
+
+  adminLoggedIn(){
+    return !!localStorage.getItem('token')
   }
 }

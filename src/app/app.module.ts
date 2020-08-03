@@ -22,6 +22,7 @@ import { AdminProfileComponent } from './components/administrator/admin-profile/
 import { MentorProfileComponent } from './components/technical-mentor/mentor-profile/mentor-profile.component';
 import { AdminLoginComponent } from './components/administrator/admin-login/admin-login.component';
 import { AllCohortsComponent } from './components/administrator/all-cohorts/all-cohorts.component';
+import { AuthGuard } from './guards/auth.guard';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,7 @@ import { AllCohortsComponent } from './components/administrator/all-cohorts/all-
     FormsModule
   ],
   providers: [
-    
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })

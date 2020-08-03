@@ -17,13 +17,15 @@ import { MentorProfileComponent } from './components/technical-mentor/mentor-pro
 import { AdminProfileComponent } from './components/administrator/admin-profile/admin-profile.component';
 import { AdminLoginComponent } from './components/administrator/admin-login/admin-login.component';
 import { AllCohortsComponent } from './components/administrator/all-cohorts/all-cohorts.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full'},
   { path: 'home', component: LandingComponent},
-  { path: 'admin-login', component: AdminLoginComponent},
+  { path: 'login', component: AdminLoginComponent},
   { path: 'admin', 
     component: AdministratorComponent,
+    canActivate: [AuthGuard],
     children: [
       { path: 'dashboard', component: AdminDashboardComponent},
       { path: 'new-cohort', component: AddCohortComponent},
