@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -23,6 +23,7 @@ import { MentorProfileComponent } from './components/technical-mentor/mentor-pro
 import { AdminLoginComponent } from './components/administrator/admin-login/admin-login.component';
 import { AllCohortsComponent } from './components/administrator/all-cohorts/all-cohorts.component';
 import { AuthGuard } from './guards/auth.guard';
+import { TokenInterceptorService } from './interceptor/token-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -52,8 +53,11 @@ import { AuthGuard } from './guards/auth.guard';
     FormsModule
   ],
   providers: [
-    AuthGuard
-  ],
+    AuthGuard,
+    { provide: HTTP_INTERCEPTORS, 
+    useClass: TokenInterceptorService,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
