@@ -1,29 +1,35 @@
 <div class="mentor-container">
     <h1>New Technical mentor</h1>
     <form>
-      <div class="form-row">
-        <div class="form-group col-md-6">
-          <label for="inputEmail4">Last Name</label>
-          <input type="text" class="form-control" id="inputEmail4" placeholder="last name">
-        </div>
-        <div class="form-group col-md-6">
-          <label for="inputPassword4">First Name</label>
-          <input type="password" class="form-control" id="inputPassword4" placeholder="first name">
-        </div>
-      </div>
       <div class="form-group">
         <label for="inputAddress">Email Address</label>
-        <input type="email" class="form-control" id="inputAddress" placeholder="technicalmentor@email.com">
+        <input type="email"   [(ngModel)]="mentor.email" name= "mentor.email" class="form-control" id="inputAddress" placeholder="technicalmentor@email.com">
       </div>
-      <div class="form-row">
-        <div class="form-group col-md-6">
-          <label for="inputState">Cohort</label>
-          <select id="inputState" class="form-control">
-            <option selected>Corhot1</option>
-            <option>Cohort2</option>
-          </select>
+      <div class="form-group">
+        <label for="inputAddress">First Name</label>
+        <input type="email"   [(ngModel)]="mentor.first_name" name= "mentor.first_name" class="form-control" id="inputAddress" placeholder="first name">
+      </div>
+        <div class="form-group">
+          <label for="inputAddress">Last Name</label>
+          <input type="email"   [(ngModel)]="mentor.last_name" name= "mentor.last_name" class="form-control" id="inputAddress" placeholder="last name">
         </div>
+      <div class="form-group">
+        <label for="inputAddress">Username</label>
+        <input type="email"   [(ngModel)]="mentor.user_name" name= "mentor.user_name" class="form-control" id="inputAddress" placeholder="Username">
       </div>
+      <div class="form-group">
+        <label for="inputAddress">Cohort</label>
+        <input type="email"   [(ngModel)]="mentor.cohort" name= "mentorcohort" class="form-control" id="inputAddress" placeholder="Cohort">
+      </div>
+      <div class="form-group">
+        <label for="inputAddress">Bio</label>
+        <input type="email"   [(ngModel)]="mentor.bio" name= "mentor.bio" class="form-control" id="inputAddress" placeholder="bio">
+      </div>  
+      <div class="form-group">
+        <label for="inputAddress">Phone</label>
+        <input type="email"   [(ngModel)]="mentor.phone" name= "mentor.phone" class="form-control" id="inputAddress" placeholder="Phone">
+      </div>  
+
       <div class="form-group">
         <div class="form-check">
           <input class="form-check-input" type="checkbox" id="check">
@@ -32,6 +38,6 @@
           </label>
         </div>
       </div>
-      <button type="submit" class="btn" id="register">Register Mentor</button>
+      <button type="submit"  (click)="RegisterMentor()" class="btn" id="register">Register Mentor</button>
     </form>
   </div>

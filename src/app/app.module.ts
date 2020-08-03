@@ -22,6 +22,9 @@ import { AdminProfileComponent } from './components/administrator/admin-profile/
 import { MentorProfileComponent } from './components/technical-mentor/mentor-profile/mentor-profile.component';
 import { AdminLoginComponent } from './components/administrator/admin-login/admin-login.component';
 import { AllCohortsComponent } from './components/administrator/all-cohorts/all-cohorts.component';
+import { AllMentorsComponent } from './components/administrator/all-mentors/all-mentors.component';
+import { AllStudentsComponent } from './components/administrator/all-students/all-students.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +46,9 @@ import { AllCohortsComponent } from './components/administrator/all-cohorts/all-
     MentorProfileComponent,
     AdminLoginComponent,
     AllCohortsComponent,
+    AllMentorsComponent,
+    AllStudentsComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

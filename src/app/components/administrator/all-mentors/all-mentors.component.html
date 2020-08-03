@@ -1,0 +1,24 @@
+<div class="container" style="padding-top: 200px; text-align: center;">
+  <h1>Technical Mentors</h1>
+  <br> <br>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">email</th>
+          <th scope="col">First Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">Username</th>
+          <th scope="col">Phone</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor = "let mentor of mentors">
+          <td>{{mentor.email}}</td>
+          <td>{{mentor.first_name}}</td>
+          <td>{{mentor.last_name}}</td>
+          <td>{{mentor.user_name}}</td>
+          <td>{{mentor.phone}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
