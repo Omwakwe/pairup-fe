@@ -5,16 +5,16 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class ApiService {
+export class AllCohortsService {
 
-  baseurl = "https://pair-app-v1.herokuapp.com/api/";
-  cohorturl = "https://pair-app-v1.herokuapp.com/api/cohorts/cohorts/";
+  baseurl = "https://pair-app-v1.herokuapp.com";
+  cohorturl = "https://pair-app-v1.herokuapp.com/cohorts";
   httpHeaders = new HttpHeaders({'Content-Type': 'application/json'})
 
   constructor(private http: HttpClient) { }
 
   getAllCohorts(): Observable<any>{
-    return this.http.get(this.baseurl + 'cohorts/cohorts',
+    return this.http.get(this.baseurl + '/cohorts/',
     {headers: this.httpHeaders})
   }
 

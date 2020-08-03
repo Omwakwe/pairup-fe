@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../../../services/api.service';
+import { AllCohortsService } from '../../../services/all-cohorts.service';
 
 @Component({
   selector: 'app-add-cohort',
   templateUrl: './add-cohort.component.html',
   styleUrls: ['./add-cohort.component.css'],
-  providers: [ApiService]
+  providers: [AllCohortsService]
 })
 export class AddCohortComponent implements OnInit {
 
   cohort;
   returned_cohort;
   errorMessage = 'Error when creating cohort'
-  constructor(private api:ApiService){
+  constructor(private api:AllCohortsService){
     this.RegisterCohort();
   }
   ngOnInit() {

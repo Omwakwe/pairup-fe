@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../../../services/api.service'; 
+import { AllCohortsService } from '../../../services/all-cohorts.service'; 
 
 @Component({
   selector: 'app-all-cohorts',
   templateUrl: './all-cohorts.component.html',
   styleUrls: ['./all-cohorts.component.css'],
-  providers: [ApiService]
+  providers: [AllCohortsService]
 })
 export class AllCohortsComponent implements OnInit {
 
@@ -23,9 +23,9 @@ export class AllCohortsComponent implements OnInit {
     )
   }
 
-  constructor(private api:ApiService){
+  constructor(private api:AllCohortsService){
     this.getAllCohorts();
-    
+
   }
 
   ngOnInit(): void {
