@@ -17,6 +17,8 @@ import { MentorProfileComponent } from './components/technical-mentor/mentor-pro
 import { AdminProfileComponent } from './components/administrator/admin-profile/admin-profile.component';
 import { AdminLoginComponent } from './components/administrator/admin-login/admin-login.component';
 import { AllCohortsComponent } from './components/administrator/all-cohorts/all-cohorts.component';
+import { AllMentorsComponent } from './components/administrator/all-mentors/all-mentors.component';
+import { AllStudentsComponent } from './components/administrator/all-students/all-students.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -30,6 +32,8 @@ const routes: Routes = [
       { path: 'all-cohorts', component: AllCohortsComponent},
       { path: 'new-mentor', component: AddMentorComponent},
       { path: 'new-student', component: AddStudentComponent},
+      { path: 'all-mentors', component: AllMentorsComponent},
+      { path: 'all-students', component: AllStudentsComponent},
       { path: 'admin-profile', component: AdminProfileComponent},
       { path: '', redirectTo: 'dashboard', pathMatch: 'full'},
     ]},
