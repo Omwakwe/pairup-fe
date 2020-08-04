@@ -9,7 +9,9 @@ export class ApiService {
 
   baseurl = "https://pair-app-v1.herokuapp.com/api/";
   cohorturl = "https://pair-app-v1.herokuapp.com/cohorts/";
-  adminurl = "https://pair-app-v1.herokuapp.com/admins/";
+  // adminurl = "https://pair-app-v1.herokuapp.com/admins/";
+  adminurl = "https://pair-app-v1.herokuapp.com/admins/"
+  singleadmin = "https://pair-app-v1.herokuapp.com/admins"
   adminloginurl = "https://pair-app-v1.herokuapp.com/auth/jwt/token/";
 
   httpHeaders = new HttpHeaders({'Content-Type': 'application/json'})
@@ -27,6 +29,11 @@ export class ApiService {
 
   getAllAdmins(): Observable<any>{
     return this.http.get(this.adminurl,
+    {headers: this.httpHeaders})
+  }
+
+  getAdmin(id): Observable<any>{
+    return this.http.get(this.singleadmin + id + "/",
     {headers: this.httpHeaders})
   }
   

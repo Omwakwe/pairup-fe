@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpInterceptor, HttpRequest, HttpHandler, HttpEvent } from '@angular/common/http';
+import { HttpClient, HttpInterceptor, HttpRequest, HttpHandler, HttpEvent, HttpHeaders } from '@angular/common/http';
 import { CanActivate, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { tap, shareReplay } from 'rxjs/operators';
@@ -15,16 +15,22 @@ import { environment } from '../../../environments/environment';
 export class AdminService {
 
   private adminloginurl = "https://pair-app-v1.herokuapp.com/auth/jwt/token/";
+  private cohorturl = "https://pair-app-v1.herokuapp.com/cohorts/";
 
   constructor(private http: HttpClient) { }
 
+  httpHeaders = new HttpHeaders({'Content-Type': 'application/json'})
+  
   private setSession(authResult) {
-    const token = authResult.token;
+    const token = authResult.access;
     const payload = <JWTPayload> jwtDecode(token);
     const expiresAt = moment.unix(payload.exp);
-    // if payload.role == "admin"
-    localStorage.setItem('token', authResult.token);
-    localStorage.setItem('expires_at', JSON.stringify(expiresAt.valueOf()));
+    if (payload.role == "admin"){
+      console.log("PAYLOAD")
+      console.log(payload)
+      localStorage.setItem('token', authResult.access);
+      localStorage.setItem('expires_at', JSON.stringify(expiresAt.valueOf()));
+    }
   }
 
   get token(): string {
@@ -72,6 +78,11 @@ export class AdminService {
   adminLoggedOut() {
     return !this.adminLoggedIn();
   }
+
+  getAllCohorts(): Observable<any>{
+    return this.http.get(this.cohorturl,
+    {headers: this.httpHeaders})
+  }
 }
 
 @Injectable()
@@ -82,7 +93,7 @@ export class AdminAuthInterceptor implements HttpInterceptor {
 
     if (token) {
       const cloned = req.clone({
-        headers: req.headers.set('Authorization', 'JWT '.concat(token))
+        headers: req.headers.set('Authorization', 'Bearer '.concat(token))
       });
 
       return next.handle(cloned);
@@ -93,7 +104,7 @@ export class AdminAuthInterceptor implements HttpInterceptor {
 }
 
 @Injectable()
-export class AuthGuard implements CanActivate {
+export class AdminAuthGuard implements CanActivate {
 
   constructor(private adminService: AdminService, private router: Router) { }
 
@@ -117,8 +128,8 @@ interface JWTPayload {
   email: string;
   exp: number;
   role: string;
-  token_type: string
-  jti: any;
+  token_type: string;
+  jti: string;
   bio: string;
   phone: string;
 }

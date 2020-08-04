@@ -18,6 +18,7 @@ import { AdminProfileComponent } from './components/administrator/admin-profile/
 import { AdminLoginComponent } from './components/administrator/admin-login/admin-login.component';
 import { AllCohortsComponent } from './components/administrator/all-cohorts/all-cohorts.component';
 import { AuthGuard } from './guards/auth.guard';
+import { AdminAuthGuard } from './services/admin/admin.service';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -25,7 +26,7 @@ const routes: Routes = [
   { path: 'login', component: AdminLoginComponent},
   { path: 'admin', 
     component: AdministratorComponent,
-    canActivate: [AuthGuard],
+    canActivate: [AdminAuthGuard],
     children: [
       { path: 'dashboard', component: AdminDashboardComponent},
       { path: 'new-cohort', component: AddCohortComponent},

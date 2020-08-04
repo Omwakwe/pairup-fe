@@ -24,6 +24,7 @@ import { AdminLoginComponent } from './components/administrator/admin-login/admi
 import { AllCohortsComponent } from './components/administrator/all-cohorts/all-cohorts.component';
 import { AuthGuard } from './guards/auth.guard';
 import { TokenInterceptorService } from './interceptor/token-interceptor.service';
+import { AdminService, AdminAuthInterceptor, AdminAuthGuard } from './services/admin/admin.service';
 
 @NgModule({
   declarations: [
@@ -54,10 +55,17 @@ import { TokenInterceptorService } from './interceptor/token-interceptor.service
   ],
   providers: [
     AuthGuard,
+    AdminService,
+    AdminAuthGuard,
+    // { provide: HTTP_INTERCEPTORS, 
+    // useClass: TokenInterceptorService,
+    // multi: true
+    // },
     { provide: HTTP_INTERCEPTORS, 
-    useClass: TokenInterceptorService,
-    multi: true
-  }],
+      useClass: AdminAuthInterceptor,
+      multi: true
+    },
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
