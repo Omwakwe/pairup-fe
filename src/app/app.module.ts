@@ -22,9 +22,15 @@ import { AdminProfileComponent } from './components/administrator/admin-profile/
 import { MentorProfileComponent } from './components/technical-mentor/mentor-profile/mentor-profile.component';
 import { AdminLoginComponent } from './components/administrator/admin-login/admin-login.component';
 import { AllCohortsComponent } from './components/administrator/all-cohorts/all-cohorts.component';
+
 import { AuthGuard } from './guards/auth.guard';
 import { TokenInterceptorService } from './interceptor/token-interceptor.service';
 import { AdminService, AdminAuthInterceptor, AdminAuthGuard } from './services/admin/admin.service';
+
+import { AllMentorsComponent } from './components/administrator/all-mentors/all-mentors.component';
+import { AllStudentsComponent } from './components/administrator/all-students/all-students.component';
+import { LoginComponent } from './components/login/login.component';
+
 
 @NgModule({
   declarations: [
@@ -46,6 +52,9 @@ import { AdminService, AdminAuthInterceptor, AdminAuthGuard } from './services/a
     MentorProfileComponent,
     AdminLoginComponent,
     AllCohortsComponent,
+    AllMentorsComponent,
+    AllStudentsComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
