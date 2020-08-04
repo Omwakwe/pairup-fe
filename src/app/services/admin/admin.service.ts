@@ -13,10 +13,13 @@ import { environment } from '../../../environments/environment';
 })
 
 export class AdminService {
-
+  private baseurl = "https://pair-app-v1.herokuapp.com";
   private adminloginurl = "https://pair-app-v1.herokuapp.com/auth/jwt/token/";
   private cohorturl = "https://pair-app-v1.herokuapp.com/cohorts/";
-
+  private refreshtokenurl = "https://pair-app-v1.herokuapp.com/api/token/refresh/";
+  private mentorurl = "https://pair-app-v1.herokuapp.com/mentors/";
+  private studenturl = "https://pair-app-v1.herokuapp.com/students/";
+  
   constructor(private http: HttpClient) { }
 
   httpHeaders = new HttpHeaders({'Content-Type': 'application/json'})
@@ -55,8 +58,8 @@ export class AdminService {
   refreshToken() {
     if (moment().isBetween(this.getExpiration().subtract(1, 'days'), this.getExpiration())) {
       return this.http.post(
-        this.adminloginurl.concat('refresh-token/'),
-        { token: this.token }
+        this.refreshtokenurl,
+        { refresh: this.token }
       ).pipe(
         tap(response => this.setSession(response)),
         shareReplay(),
@@ -82,6 +85,28 @@ export class AdminService {
   getAllCohorts(): Observable<any>{
     return this.http.get(this.cohorturl,
     {headers: this.httpHeaders})
+  }
+
+  getAllStudents(): Observable<any>{
+    return this.http.get(this.baseurl + '/students/',
+    {headers: this.httpHeaders})
+  }
+
+  getAllMentors(): Observable<any>{
+    return this.http.get(this.baseurl + '/mentors/',
+    {headers: this.httpHeaders})
+  }
+  
+  RegisterMentor(mentor): Observable<any>{
+    return this.http.post<any>(this.mentorurl, mentor, {headers: this.httpHeaders});
+  }
+
+  RegisterCohort(cohort): Observable<any>{
+    return this.http.post<any>(this.cohorturl, cohort, {headers: this.httpHeaders});
+  }
+
+  RegisterStudent(student): Observable<any>{
+    return this.http.post<any>(this.studenturl, student, {headers: this.httpHeaders});
   }
 }
 

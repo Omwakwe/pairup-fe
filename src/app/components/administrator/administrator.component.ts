@@ -38,7 +38,7 @@ export class AdministratorComponent implements OnInit {
     // this.getAllAdmins();
     this.getAdmin(this.id);
     this.admin ={
-      last_name: '', first_name: ''
+      last_name: '', first_name: '', email: ''
     };
   }
 

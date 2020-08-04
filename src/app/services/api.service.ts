@@ -11,7 +11,7 @@ export class ApiService {
   
   // adminurl = "https://pair-app-v1.herokuapp.com/admins/";
   adminurl = "https://pair-app-v1.herokuapp.com/admins/"
-  singleadmin = "https://pair-app-v1.herokuapp.com/admins"
+  singleadmin = "https://pair-app-v1.herokuapp.com/admins/"
   adminloginurl = "https://pair-app-v1.herokuapp.com/auth/jwt/token/";
 
 
