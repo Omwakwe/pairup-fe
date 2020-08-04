@@ -32,6 +32,7 @@ import { AllStudentsComponent } from './components/administrator/all-students/al
 import { LoginComponent } from './components/login/login.component';
 import { MentorLoginComponent } from './components/technical-mentor/mentor-login/mentor-login.component';
 import { StudentLoginComponent } from './components/student/student-login/student-login.component';
+import { TmStudentsComponent } from './components/technical-mentor/tm-students/tm-students.component';
 
 
 @NgModule({
@@ -59,6 +60,7 @@ import { StudentLoginComponent } from './components/student/student-login/studen
     LoginComponent,
     MentorLoginComponent,
     StudentLoginComponent,
+    TmStudentsComponent,
   ],
   imports: [
     BrowserModule,
