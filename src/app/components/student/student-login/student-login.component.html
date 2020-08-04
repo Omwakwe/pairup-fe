@@ -1,1 +1,17 @@
-<p>student-login works!</p>
+<body>
+    <div class="box">
+      <img class="logo" alt="dribble-logo" src="../../../../assets/images/PairUp.jpg" />
+      <p class="signin">Sign in</p>
+      <p class="signin-text">Please sign in using your details</p>
+      <!-- <p>{{ error?.message }}</p>
+      <p *ngIf="error">{{ error?.error | json }}</p> -->
+      <!-- <form> -->
+      <input #email name="email" type="email" placeholder="Email Address" [(ngModel)]="admindata.email">
+      <br />
+      <input #password name="password" type="password" placeholder="Password" required [(ngModel)]="admindata.password">
+      <!-- <button (click)="loginAdmin()">Sign In</button> -->
+      <button (click)="adminLogin(email.value, password.value)">Sign In</button>
+      <!-- </form> -->
+    </div>
+  </body>
+  
