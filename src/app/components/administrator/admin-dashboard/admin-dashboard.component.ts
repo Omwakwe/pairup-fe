@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminService } from '../../../services/admin/admin.service';
+import { AllCohortsComponent } from '../all-cohorts/all-cohorts.component';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -7,10 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminDashboardComponent implements OnInit {
 
-  constructor(){
+  cohorts = [];
+
+  getAllCohorts = () => {
+    this.adminService.getAllCohorts().subscribe(
+      data => {
+        this.cohorts = data;
+        console.log(this.cohorts)
+      },
+      error => {
+        console.log(error);
+      }
+    )
+  }
+
+  lengthCohorts = this.cohorts.length
+  constructor(private adminService: AdminService){
     
   }
 
-  ngOnInit(): void {
+  ngOnInit(){
+    this.getAllCohorts();
   }
 }

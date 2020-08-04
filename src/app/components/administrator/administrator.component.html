@@ -18,8 +18,8 @@
                 alt="User picture">
             </div>
             <div class="user-info">
-              <span class="user-name">John
-                <strong>Smith</strong>
+              <span class="user-name">{{admin.first_name}}
+                <strong>{{admin.last_name}}</strong>
               </span>
               <span class="user-role">Administrator</span>
             </div>
@@ -85,14 +85,13 @@
                   <span>Students</span>
                 </a>
               </li>
-              
             </ul>
           </div>
           <!-- sidebar-menu  -->
         </div>
         <!-- sidebar-content  -->
         <div class="sidebar-footer">
-          <a>
+          <a (click)="adminLogout()">
             <i class="fas fa-sign-out-alt"></i>
             <span>LOGOUT</span>
           </a>
