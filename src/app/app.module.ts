@@ -30,6 +30,8 @@ import { AdminService, AdminAuthInterceptor, AdminAuthGuard } from './services/a
 import { AllMentorsComponent } from './components/administrator/all-mentors/all-mentors.component';
 import { AllStudentsComponent } from './components/administrator/all-students/all-students.component';
 import { LoginComponent } from './components/login/login.component';
+import { MentorLoginComponent } from './components/technical-mentor/mentor-login/mentor-login.component';
+import { StudentLoginComponent } from './components/student/student-login/student-login.component';
 
 
 @NgModule({
@@ -55,6 +57,8 @@ import { LoginComponent } from './components/login/login.component';
     AllMentorsComponent,
     AllStudentsComponent,
     LoginComponent,
+    MentorLoginComponent,
+    StudentLoginComponent,
   ],
   imports: [
     BrowserModule,

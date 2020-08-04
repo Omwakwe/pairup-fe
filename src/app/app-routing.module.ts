@@ -26,7 +26,7 @@ import { LoginComponent } from './components/login/login.component';
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full'},
   { path: 'home', component: LandingComponent},
-  { path: 'login', component: LoginComponent},
+  { path: 'admin-login', component: AdminLoginComponent},
   { path: 'admin', 
     component: AdministratorComponent,
     canActivate: [AdminAuthGuard],
