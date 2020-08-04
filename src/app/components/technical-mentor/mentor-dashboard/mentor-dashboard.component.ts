@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MentorService } from '../../../services/mentor/mentor.service';
 
 @Component({
   selector: 'app-mentor-dashboard',
@@ -7,9 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MentorDashboardComponent implements OnInit {
 
-  constructor() { }
+  tmStudents = [];
+
+
+  getAllStudents = () => {
+    this.mentorService.getAllStudents().subscribe(
+      data => {
+        this.tmStudents = data;
+        console.log(this.tmStudents)
+      },
+      error => {
+        console.log(error);
+      }
+    )
+  }
+
+  constructor(private mentorService: MentorService) { }
 
   ngOnInit(): void {
+    this.getAllStudents();
   }
 
 }
