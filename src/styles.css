@@ -181,3 +181,10 @@ q:after {
   font-weight: 900;
 
 }
+
+.logoutButton{
+  margin: 0;
+  border: none;
+  background: #14213D;
+  color: #fff;
+}

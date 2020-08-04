@@ -19,7 +19,7 @@ export class AdminService {
   private refreshtokenurl = "https://pair-app-v1.herokuapp.com/api/token/refresh/";
   private mentorurl = "https://pair-app-v1.herokuapp.com/mentors/";
   private studenturl = "https://pair-app-v1.herokuapp.com/students/";
-  
+
   constructor(private http: HttpClient) { }
 
   httpHeaders = new HttpHeaders({'Content-Type': 'application/json'})
@@ -28,12 +28,20 @@ export class AdminService {
     const token = authResult.access;
     const payload = <JWTPayload> jwtDecode(token);
     const expiresAt = moment.unix(payload.exp);
-    if (payload.role == "admin"){
-      console.log("PAYLOAD")
-      console.log(payload)
-      localStorage.setItem('token', authResult.access);
-      localStorage.setItem('expires_at', JSON.stringify(expiresAt.valueOf()));
-    }
+    // if (payload.role == "admin"){
+    //   console.log("PAYLOAD")
+    //   console.log(payload)
+    //   localStorage.setItem('token', authResult.access);
+    //   localStorage.setItem('expires_at', JSON.stringify(expiresAt.valueOf()));
+    // }
+    console.log("PAYLOAD")
+    console.log(payload)
+    console.log("Token")
+    console.log(token)
+    console.log("Before SetItem")
+    localStorage.setItem('token', token);
+    console.log("After SetItem")
+    localStorage.setItem('expires_at', JSON.stringify(expiresAt.valueOf()));
   }
 
   get token(): string {
@@ -53,6 +61,7 @@ export class AdminService {
   adminLogout() {
     localStorage.removeItem('token');
     localStorage.removeItem('expires_at');
+    
   }
 
   refreshToken() {
@@ -135,7 +144,7 @@ export class AdminAuthGuard implements CanActivate {
 
   canActivate() {
     if (this.adminService.adminLoggedIn()) {
-      this.adminService.refreshToken();
+      // this.adminService.refreshToken();
 
       return true;
     } else {

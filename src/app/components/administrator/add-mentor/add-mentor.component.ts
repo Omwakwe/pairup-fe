@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../../../services/api.service';
+import { AdminService } from '../../../services/admin/admin.service';
 
 @Component({
   selector: 'app-add-mentor',
   templateUrl: './add-mentor.component.html',
   styleUrls: ['./add-mentor.component.css'],
-  providers: [ApiService]
+  providers: [AdminService]
 })
 export class AddMentorComponent implements OnInit {
 
   mentor;
   returned_mentor;
   errorMessage = 'Error when creating mentor'
-  constructor(private api:ApiService){
+  constructor(private adminService:AdminService){
     this.RegisterMentor();
   }
   ngOnInit() {
@@ -31,7 +31,7 @@ export class AddMentorComponent implements OnInit {
 
   RegisterMentor = () => {
     // alert("COHORT" + this.cohort.cohort_name)
-    this.api.RegisterMentor(this.mentor).subscribe({
+    this.adminService.RegisterMentor(this.mentor).subscribe({
       next: (data) => {
         this.returned_mentor = data;
         alert('Mentor ' + this.returned_mentor.first_name + ' has been created')
