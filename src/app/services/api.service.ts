@@ -54,6 +54,15 @@ export class ApiService {
     return !!localStorage.getItem('token')
   }
 
+  studentLoggedIn(){
+    return !!localStorage.getItem('token')
+  }
+
+  mentorLoggedIn(){
+    return !!localStorage.getItem('token')
+  }
+
+
   getToken(){
     return localStorage.getItem('token')
   }

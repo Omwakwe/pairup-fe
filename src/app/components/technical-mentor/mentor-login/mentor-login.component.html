@@ -6,10 +6,10 @@
       <!-- <p>{{ error?.message }}</p>
       <p *ngIf="error">{{ error?.error | json }}</p> -->
       <!-- <form> -->
-      <input #email name="email" type="email" placeholder="Email Address" [(ngModel)]="admindata.email">
+      <input #email name="email" type="email" placeholder="Email Address" [(ngModel)]="mentordata.email">
       <br />
-      <input #password name="password" type="password" placeholder="Password" required [(ngModel)]="admindata.password">
-      <!-- <button (click)="loginAdmin()">Sign In</button> -->
+      <input #password name="password" type="password" placeholder="Password" required [(ngModel)]="mentordata.password">
+      <!-- <button (click)="loginmentor()">Sign In</button> -->
       <button (click)="mentorLogin(email.value, password.value)">Sign In</button>
       <!-- </form> -->
     </div>
