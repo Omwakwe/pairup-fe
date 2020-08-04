@@ -1,109 +1,111 @@
 <div>
-    <div class="page-wrapper chiller-theme toggled">
-      <a id="show-sidebar" class="btn btn-sm btn-dark">
-        <i class="fas fa-bars"></i>
-      </a>
-      <nav id="sidebar" class="sidebar-wrapper">
-        <div class="sidebar-content">
-          <div class="sidebar-brand">
-            <img class="logo" alt="logo" src="../../../assets/images/PairUp1.jpg" />
-            <div id="close-sidebar">
-              <i class="fas fa-times"></i>
-            </div>
+  <div class="page-wrapper chiller-theme toggled">
+    <a id="show-sidebar" class="btn btn-sm btn-dark">
+      <i class="fas fa-bars"></i>
+    </a>
+    <nav id="sidebar" class="sidebar-wrapper">
+      <div class="sidebar-content">
+        <div class="sidebar-brand">
+          <img class="logo" alt="logo" src="../../../assets/images/PairUp1.jpg" />
+          <div id="close-sidebar">
+            <i class="fas fa-times"></i>
           </div>
-          <div class="sidebar-header">
-            <div class="user-pic">
-              <img class="img-responsive img-rounded"
-                src="https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg"
-                alt="User picture">
-            </div>
-            <div class="user-info">
-              <span class="user-name">{{admin.first_name}}
-                <strong>{{admin.last_name}}</strong>
-              </span>
-              <span class="user-role">Administrator</span>
-            </div>
-          </div>
-          <!-- sidebar-header  -->
-          <div class="sidebar-menu">
-            <ul>
-              <li class="header-menu">
-                <span>Menu</span>
-              </li>
-              <li>
-                <a routerLink="dashboard">
-                  <i class="fa fa-tachometer-alt"></i>
-                  <span>Dashboard</span>
-                </a>
-              </li>
-              <li>
-                <a routerLink="new-cohort">
-                  <i class="fas fa-book"></i>
-                  <span>Add Cohort</span>
-                </a>
-              </li>
-              <li class="sidebar-dropdown">
-                <a>
-                  <i class="fas fa-user-plus"></i>
-                  <span>Add User</span>
-                </a>
-                <div class="sidebar-submenu">
-                  <ul>
-                    <li>
-                      <a routerLink="new-mentor">Technical Mentor</a>
-                    </li>
-                    <li>
-                      <a routerLink="new-student">Student</a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li class="header-menu">
-                <span>Extra</span>
-              </li>
-              <li>
-                <a routerLink="admin-profile">
-                  <i class="fas fa-id-card"></i>
-                  <span>My Profile</span>
-                </a>
-              </li>
-              <li>
-                <a routerLink="all-cohorts">
-                  <i class="fa fa-book"></i>
-                  <span>Cohorts</span>
-                </a>
-              </li>
-              <li>
-                <a routerLink="all-mentors">
-                  <i class="fas fa-user-friends"></i>
-                  <span>Technical Mentors</span>
-                </a>
-              </li>
-              <li>
-                <a routerLink="all-students">
-                  <i class="fas fa-users"></i>
-                  <span>Students</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <!-- sidebar-menu  -->
         </div>
-        <!-- sidebar-content  -->
-        <div class="sidebar-footer">
-          <a (click)="adminLogout()">
+        <div class="sidebar-header">
+          <div class="user-pic">
+            <img class="img-responsive img-rounded"
+              src="https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg"
+              alt="User picture">
+          </div>
+          <div class="user-info">
+            <span class="user-name">{{admin.email}}
+              <strong>{{admin.last_name}}</strong>
+            </span>
+            <span class="user-role">Administrator</span>
+          </div>
+        </div>
+        <!-- sidebar-header  -->
+        <div class="sidebar-menu">
+          <ul>
+            <li class="header-menu">
+              <span>Menu</span>
+            </li>
+            <li>
+              <a routerLink="dashboard">
+                <i class="fa fa-tachometer-alt"></i>
+                <span>Dashboard</span>
+              </a>
+            </li>
+            <li>
+              <a routerLink="new-cohort">
+                <i class="fas fa-book"></i>
+                <span>Add Cohort</span>
+              </a>
+            </li>
+            <li class="sidebar-dropdown">
+              <a>
+                <i class="fas fa-user-plus"></i>
+                <span>Add User</span>
+              </a>
+              <div class="sidebar-submenu">
+                <ul>
+                  <li>
+                    <a routerLink="new-mentor">Technical Mentor</a>
+                  </li>
+                  <li>
+                    <a routerLink="new-student">Student</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="header-menu">
+              <span>Extra</span>
+            </li>
+            <li>
+              <a routerLink="admin-profile">
+                <i class="fas fa-id-card"></i>
+                <span>My Profile</span>
+              </a>
+            </li>
+            <li>
+              <a routerLink="all-cohorts">
+                <i class="fa fa-book"></i>
+                <span>Cohorts</span>
+              </a>
+            </li>
+            <li>
+              <a routerLink="all-mentors">
+                <i class="fas fa-user-friends"></i>
+                <span>Technical Mentors</span>
+              </a>
+            </li>
+            <li>
+              <a routerLink="all-students">
+                <i class="fas fa-users"></i>
+                <span>Students</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- sidebar-menu  -->
+      </div>
+      <!-- sidebar-content  -->
+      <div class="sidebar-footer">
+        <button (click)="adminLogout()" class="logoutButton">
+          <a>
             <i class="fas fa-sign-out-alt"></i>
             <span>LOGOUT</span>
           </a>
-        </div>
-      </nav>
-      <!-- sidebar-wrapper  -->
-      <main class="page-content">
-        <div class="container">
-            <router-outlet></router-outlet>
-        </div>
-      </main>
-      <!-- page-content" -->
-    </div>
-    <!-- page-wrapper -->
+        </button>
+      </div>
+    </nav>
+    <!-- sidebar-wrapper  -->
+    <main class="page-content">
+      <div class="container">
+        <router-outlet></router-outlet>
+      </div>
+    </main>
+    <!-- page-content" -->
   </div>
+  <!-- page-wrapper -->
+</div>

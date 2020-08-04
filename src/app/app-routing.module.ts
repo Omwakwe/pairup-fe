@@ -21,11 +21,12 @@ import { AuthGuard } from './guards/auth.guard';
 import { AdminAuthGuard } from './services/admin/admin.service';
 import { AllMentorsComponent } from './components/administrator/all-mentors/all-mentors.component';
 import { AllStudentsComponent } from './components/administrator/all-students/all-students.component';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full'},
   { path: 'home', component: LandingComponent},
-  { path: 'login', component: AdminLoginComponent},
+  { path: 'login', component: LoginComponent},
   { path: 'admin', 
     component: AdministratorComponent,
     canActivate: [AdminAuthGuard],

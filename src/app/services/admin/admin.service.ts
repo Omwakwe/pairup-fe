@@ -13,9 +13,12 @@ import { environment } from '../../../environments/environment';
 })
 
 export class AdminService {
-
+  private baseurl = "https://pair-app-v1.herokuapp.com";
   private adminloginurl = "https://pair-app-v1.herokuapp.com/auth/jwt/token/";
   private cohorturl = "https://pair-app-v1.herokuapp.com/cohorts/";
+  private refreshtokenurl = "https://pair-app-v1.herokuapp.com/api/token/refresh/";
+  private mentorurl = "https://pair-app-v1.herokuapp.com/mentors/";
+  private studenturl = "https://pair-app-v1.herokuapp.com/students/";
 
   constructor(private http: HttpClient) { }
 
@@ -25,12 +28,20 @@ export class AdminService {
     const token = authResult.access;
     const payload = <JWTPayload> jwtDecode(token);
     const expiresAt = moment.unix(payload.exp);
-    if (payload.role == "admin"){
-      console.log("PAYLOAD")
-      console.log(payload)
-      localStorage.setItem('token', authResult.access);
-      localStorage.setItem('expires_at', JSON.stringify(expiresAt.valueOf()));
-    }
+    // if (payload.role == "admin"){
+    //   console.log("PAYLOAD")
+    //   console.log(payload)
+    //   localStorage.setItem('token', authResult.access);
+    //   localStorage.setItem('expires_at', JSON.stringify(expiresAt.valueOf()));
+    // }
+    console.log("PAYLOAD")
+    console.log(payload)
+    console.log("Token")
+    console.log(token)
+    console.log("Before SetItem")
+    localStorage.setItem('token', token);
+    console.log("After SetItem")
+    localStorage.setItem('expires_at', JSON.stringify(expiresAt.valueOf()));
   }
 
   get token(): string {
@@ -50,13 +61,14 @@ export class AdminService {
   adminLogout() {
     localStorage.removeItem('token');
     localStorage.removeItem('expires_at');
+    
   }
 
   refreshToken() {
     if (moment().isBetween(this.getExpiration().subtract(1, 'days'), this.getExpiration())) {
       return this.http.post(
-        this.adminloginurl.concat('refresh-token/'),
-        { token: this.token }
+        this.refreshtokenurl,
+        { refresh: this.token }
       ).pipe(
         tap(response => this.setSession(response)),
         shareReplay(),
@@ -82,6 +94,28 @@ export class AdminService {
   getAllCohorts(): Observable<any>{
     return this.http.get(this.cohorturl,
     {headers: this.httpHeaders})
+  }
+
+  getAllStudents(): Observable<any>{
+    return this.http.get(this.baseurl + '/students/',
+    {headers: this.httpHeaders})
+  }
+
+  getAllMentors(): Observable<any>{
+    return this.http.get(this.baseurl + '/mentors/',
+    {headers: this.httpHeaders})
+  }
+  
+  RegisterMentor(mentor): Observable<any>{
+    return this.http.post<any>(this.mentorurl, mentor, {headers: this.httpHeaders});
+  }
+
+  RegisterCohort(cohort): Observable<any>{
+    return this.http.post<any>(this.cohorturl, cohort, {headers: this.httpHeaders});
+  }
+
+  RegisterStudent(student): Observable<any>{
+    return this.http.post<any>(this.studenturl, student, {headers: this.httpHeaders});
   }
 }
 
@@ -110,7 +144,7 @@ export class AdminAuthGuard implements CanActivate {
 
   canActivate() {
     if (this.adminService.adminLoggedIn()) {
-      this.adminService.refreshToken();
+      // this.adminService.refreshToken();
 
       return true;
     } else {

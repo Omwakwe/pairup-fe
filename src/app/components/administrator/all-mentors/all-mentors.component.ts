@@ -1,19 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../../../services/api.service'; 
+import { ApiService } from '../../../services/api.service';
+import { AdminService } from '../../../services/admin/admin.service'; 
 
 @Component({
   selector: 'app-all-mentors',
   templateUrl: './all-mentors.component.html',
   styleUrls: ['./all-mentors.component.css'],
-  providers: [ApiService]
+  providers: [AdminService]
 })
 export class AllMentorsComponent implements OnInit {
-
-
+  
   mentors = [];
 
   getAllMentors = () => {
-    this.api.getAllMentors().subscribe(
+    this.adminService.getAllMentors().subscribe(
       data => {
         this.mentors = data;
         console.log(this.mentors)
@@ -24,7 +24,7 @@ export class AllMentorsComponent implements OnInit {
     )
   }
 
-  constructor(private api:ApiService){
+  constructor(private adminService:AdminService){
     this.getAllMentors();
     
   }
