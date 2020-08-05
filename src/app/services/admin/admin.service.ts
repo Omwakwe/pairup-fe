@@ -19,7 +19,7 @@ export class AdminService {
   private refreshtokenurl = "https://pair-app-v1.herokuapp.com/api/token/refresh/";
   private mentorurl = "https://pair-app-v1.herokuapp.com/mentors/";
   private studenturl = "https://pair-app-v1.herokuapp.com/students/";
-  private singleadmin = "https://pair-app-v1.herokuapp.com/admins/";
+  private adminurl = "https://pair-app-v1.herokuapp.com/admins/";
 
   constructor(private http: HttpClient) { }
 
@@ -120,7 +120,7 @@ export class AdminService {
   }
   
   getAdmin(id): Observable<any>{
-    return this.http.get(this.singleadmin + id + "/",
+    return this.http.get(this.adminurl + id + "/",
     {headers: this.httpHeaders})
   }
 }

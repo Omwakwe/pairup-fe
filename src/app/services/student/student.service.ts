@@ -14,6 +14,7 @@ export class StudentService {
 
   private studentloginurl = "https://pair-app-v1.herokuapp.com/auth/jwt/token/";
   private refreshtokenurl = "https://pair-app-v1.herokuapp.com/api/token/refresh/";
+  private studenturl = "https://pair-app-v1.herokuapp.com/students/";
 
   constructor(private http: HttpClient) { }
 
@@ -23,20 +24,12 @@ export class StudentService {
     const token = authResult.access;
     const payload = <JWTPayload> jwtDecode(token);
     const expiresAt = moment.unix(payload.exp);
-    // if (payload.role == "student"){
-    //   console.log("PAYLOAD")
-    //   console.log(payload)
-    //   localStorage.setItem('token', authResult.access);
-    //   localStorage.setItem('expires_at', JSON.stringify(expiresAt.valueOf()));
-    // }
-    console.log("PAYLOAD")
-    console.log(payload)
-    console.log("Token")
-    console.log(token)
-    console.log("Before SetItem")
-    localStorage.setItem('token', token);
-    console.log("After SetItem")
-    localStorage.setItem('expires_at', JSON.stringify(expiresAt.valueOf()));
+    if (payload.role == "student"){
+      console.log("PAYLOAD")
+      console.log(payload)
+      localStorage.setItem('token', authResult.access);
+      localStorage.setItem('expires_at', JSON.stringify(expiresAt.valueOf()));
+    }
   }
 
   get token(): string {
@@ -84,6 +77,11 @@ export class StudentService {
 
   studentLoggedOut() {
     return !this.studentLoggedIn();
+  }
+
+  getStudent(id): Observable<any>{
+    return this.http.get(this.studenturl + id + "/",
+    {headers: this.httpHeaders})
   }
 
 }
