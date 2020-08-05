@@ -15,7 +15,6 @@ export class AddMentorComponent implements OnInit {
 
   errorMessage = 'Error when creating mentor'
   constructor(private adminService:AdminService){
-    // this.RegisterMentor();
     this.getAllCohorts();
   }
 
@@ -25,7 +24,7 @@ export class AddMentorComponent implements OnInit {
       first_name: '',
       last_name: '',
       user_name: '',
-      cohort: '',
+      cohort: Number,
       bio: '',
       phone: '',
     };
@@ -39,7 +38,8 @@ export class AddMentorComponent implements OnInit {
       },
       error: (err) => {
         (this.errorMessage = err);
-        // alert(this.errorMessage)
+        // alert(this.errorMessage[0])
+        alert("Error when creating student. Please check that all data provided is provided and is correct.")
       },
   });
 }
