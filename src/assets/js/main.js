@@ -28,6 +28,8 @@ $(document).ready(function() {
       $("#show-sidebar").click(function() {
         $(".page-wrapper").addClass("toggled");
       });
+
+
     });
     
     

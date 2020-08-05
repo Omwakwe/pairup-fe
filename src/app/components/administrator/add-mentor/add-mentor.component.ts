@@ -11,13 +11,16 @@ export class AddMentorComponent implements OnInit {
 
   mentor;
   returned_mentor;
+  cohorts = [];
+
   errorMessage = 'Error when creating mentor'
   constructor(private adminService:AdminService){
-    this.RegisterMentor();
+    // this.RegisterMentor();
+    this.getAllCohorts();
   }
+
   ngOnInit() {
     this.mentor ={
-      
       email: '',
       first_name: '',
       last_name: '',
@@ -25,7 +28,6 @@ export class AddMentorComponent implements OnInit {
       cohort: '',
       bio: '',
       phone: '',
-
     };
   }
 
@@ -37,8 +39,20 @@ export class AddMentorComponent implements OnInit {
       },
       error: (err) => {
         (this.errorMessage = err);
+        // alert(this.errorMessage)
       },
   });
-  
+}
+
+getAllCohorts = () => {
+  this.adminService.getAllCohorts().subscribe(
+    data => {
+      this.cohorts = data;
+      console.log(this.cohorts)
+    },
+    error => {
+      console.log(error);
+    }
+  )
 }
 }

@@ -12,9 +12,12 @@ export class AddStudentComponent implements OnInit {
 
   student;
   returned_student;
+  cohorts = [];
+
   errorMessage = 'Error when creating student'
   constructor(private adminService:AdminService){
     this.RegisterStudent();
+    this.getAllCohorts();
   }
   ngOnInit() {
     this.student ={
@@ -36,7 +39,21 @@ export class AddStudentComponent implements OnInit {
       },
       error: (err) => {
         (this.errorMessage = err);
+        // alert(this.errorMessage)
       },
   });
 }
+
+getAllCohorts = () => {
+  this.adminService.getAllCohorts().subscribe(
+    data => {
+      this.cohorts = data;
+      console.log(this.cohorts)
+    },
+    error => {
+      console.log(error);
+    }
+  )
+}
+
 }

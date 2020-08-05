@@ -48,6 +48,8 @@ export class StudentComponent implements OnInit {
     };
     this.myToken = this.getToken();    
     this.myPayload = <JWTPayload> jwtDecode(this.myToken);
+    console.log("student payload")
+    console.log(this.myPayload)
     this.id = this.myPayload.user_id;
     this.getStudent(this.id);
   }
