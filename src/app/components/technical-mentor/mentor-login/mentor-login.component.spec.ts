@@ -1,5 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+
+import { RouterTestingModule } from '@angular/router/testing';
+
 import { MentorLoginComponent } from './mentor-login.component';
 
 describe('MentorLoginComponent', () => {
@@ -8,7 +12,8 @@ describe('MentorLoginComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MentorLoginComponent ]
+      declarations: [ MentorLoginComponent ],
+      imports:[ RouterTestingModule, HttpClientTestingModule ]
     })
     .compileComponents();
   }));
@@ -23,3 +28,4 @@ describe('MentorLoginComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+
