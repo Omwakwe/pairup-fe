@@ -1,5 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 import { AddMentorComponent } from './add-mentor.component';
 
 describe('AddMentorComponent', () => {
@@ -8,7 +9,8 @@ describe('AddMentorComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AddMentorComponent ]
+      declarations: [ AddMentorComponent ],
+      imports:[ RouterTestingModule, HttpClientTestingModule ]
     })
     .compileComponents();
   }));
