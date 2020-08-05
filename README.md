@@ -1,7 +1,7 @@
 # PairupFe
 
 ## Description
-An application that automatically pairs students
+A frontend for project that automatically pairs students.
 
 # Live link
 https://pedantic-rosalind-47f797.netlify.app/home
