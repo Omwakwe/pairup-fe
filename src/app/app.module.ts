@@ -34,8 +34,8 @@ import { MentorLoginComponent } from './components/technical-mentor/mentor-login
 import { StudentLoginComponent } from './components/student/student-login/student-login.component';
 import { TmStudentsComponent } from './components/technical-mentor/tm-students/tm-students.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatDatepickerModule} from '@angular/material/datepicker';
-import {MatNativeDateModule } from '@angular/material/core';
+// import {MatDatepickerModule} from '@angular/material/datepicker';
+// import {MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -69,10 +69,7 @@ import {MatNativeDateModule } from '@angular/material/core';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    BrowserAnimationsModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    
+    BrowserAnimationsModule,    
   ],
   providers: [
     AuthGuard,
