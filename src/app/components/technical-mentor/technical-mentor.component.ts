@@ -30,7 +30,7 @@ export class TechnicalMentorComponent implements OnInit {
     this.mentorService.getMentor(id).subscribe(
       data => {
         this.mentor = data;
-        console.log("Gotten mentor")
+        console.log("Gotten Mentor")
         console.log(this.mentor)
       },
       error => {
