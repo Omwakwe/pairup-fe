@@ -19,6 +19,7 @@ export class AdminService {
   private refreshtokenurl = "https://pair-app-v1.herokuapp.com/api/token/refresh/";
   private mentorurl = "https://pair-app-v1.herokuapp.com/mentors/";
   private studenturl = "https://pair-app-v1.herokuapp.com/students/";
+  private singleadmin = "https://pair-app-v1.herokuapp.com/admins/";
 
   constructor(private http: HttpClient) { }
 
@@ -28,20 +29,20 @@ export class AdminService {
     const token = authResult.access;
     const payload = <JWTPayload> jwtDecode(token);
     const expiresAt = moment.unix(payload.exp);
-    // if (payload.role == "admin"){
-    //   console.log("PAYLOAD")
-    //   console.log(payload)
-    //   localStorage.setItem('token', authResult.access);
-    //   localStorage.setItem('expires_at', JSON.stringify(expiresAt.valueOf()));
-    // }
+    if (payload.role == "admin"){
+      console.log("PAYLOAD")
+      console.log(payload)
+      localStorage.setItem('token', authResult.access);
+      localStorage.setItem('expires_at', JSON.stringify(expiresAt.valueOf()));
+    }
     console.log("PAYLOAD")
     console.log(payload)
     console.log("Token")
     console.log(token)
-    console.log("Before SetItem")
+    // console.log("Before SetItem")
     localStorage.setItem('token', token);
-    console.log("After SetItem")
-    localStorage.setItem('expires_at', JSON.stringify(expiresAt.valueOf()));
+    // console.log("After SetItem")
+    // localStorage.setItem('expires_at', JSON.stringify(expiresAt.valueOf()));
   }
 
   get token(): string {
@@ -116,6 +117,11 @@ export class AdminService {
 
   RegisterStudent(student): Observable<any>{
     return this.http.post<any>(this.studenturl, student, {headers: this.httpHeaders});
+  }
+  
+  getAdmin(id): Observable<any>{
+    return this.http.get(this.singleadmin + id + "/",
+    {headers: this.httpHeaders})
   }
 }
 
