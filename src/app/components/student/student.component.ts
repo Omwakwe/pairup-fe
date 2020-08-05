@@ -16,21 +16,18 @@ export class StudentComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  // getStudent = (id) => {
-  //   this.myToken = localStorage.getItem('token');
-  //   // console.log("MyToken1")
-  //   // console.log(this.myToken)
-  //   this.studentService.getStudent(id).subscribe(
-  //     data => {
-  //       this.student = data;
-  //       // console.log(this.admin)
-  //       // console.log("MyToken2")
-  //       // console.log(this.myToken)
-  //     },
-  //     error => {
-  //       console.log(error);
-  //     }
-  //   )
-  // }
+  getStudent = (id) => {
+    this.myToken = localStorage.getItem('token');
+    this.studentService.getStudent(id).subscribe(
+      data => {
+        this.student = data;
+        console.log("Gotten admin")
+        console.log(this.student)
+      },
+      error => {
+        console.log(error);
+      }
+    )
+  }
 
 }
