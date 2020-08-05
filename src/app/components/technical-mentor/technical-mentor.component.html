@@ -17,8 +17,8 @@
             alt="User picture">
         </div>
         <div class="user-info">
-          <span class="user-name">John
-            <strong>Smith</strong>
+          <span class="user-name">{{mentor.first_name}}
+            <strong>{{mentor.last_name}}</strong>
           </span>
           <span class="user-role">Technical Mentor</span>
         </div>
@@ -67,8 +67,8 @@
             </a>
           </li>
           <li>
-            <a>
-              <i routerLink="tm-students" class="fas fa-users"></i>
+            <a routerLink="tm-students">
+              <i class="fas fa-users"></i>
               <span>Students</span>
             </a>
           </li>
@@ -78,10 +78,12 @@
     </div>
     <!-- sidebar-content  -->
     <div class="sidebar-footer">
+      <button (click)="mentorLogout()" class="logoutButton">
       <a>
         <i class="fas fa-sign-out-alt"></i>
         <span>LOGOUT</span>
       </a>
+      </button>
     </div>
   </nav>
   <!-- sidebar-wrapper  -->

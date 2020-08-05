@@ -24,10 +24,8 @@ export class AllCohortsComponent implements OnInit {
     )
   }
 
-  lengthCohorts = Object.keys(this.cohorts).length
   constructor(private api:ApiService, private adminService: AdminService){
-    this.getAllCohorts();
-    
+    this.getAllCohorts();    
   }
 
   ngOnInit(): void {

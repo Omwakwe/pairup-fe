@@ -7,7 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StudentPairsComponent implements OnInit {
 
-  constructor() { }
+  pairDuration;
+  pairDate(){
+    console.log("DURATION");  
+  console.log(this.pairDuration);
+  }
+  constructor() {
+    this.pairDate();
+   }
 
   ngOnInit(): void {
   }

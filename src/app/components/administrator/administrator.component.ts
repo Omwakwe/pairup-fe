@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../services/api.service'; 
 import { AdminService } from '../../services/admin/admin.service';
 import { Router } from '@angular/router';
+import * as jwtDecode from 'jwt-decode';
 
 @Component({
   selector: 'app-administrator',
@@ -13,28 +14,26 @@ import { Router } from '@angular/router';
 export class AdministratorComponent implements OnInit {
   admins = [];
   admin;
-  id = 1;
+  id;
   myToken; 
-  get token(): string {
-    return localStorage.getItem('token');
+  myPayload;
+
+  getToken(){
+    return localStorage.getItem('token')
   }
 
   adminLogout(){
-    console.log("logged out")
     this.adminService.adminLogout()
-    this.router.navigate(['/login']);
+    this.router.navigate(['/home']);
   }
   
   getAdmin = (id) => {
     this.myToken = localStorage.getItem('token');
-    console.log("MyToken1")
-    console.log(this.myToken)
-    this.api.getAdmin(id).subscribe(
+    this.adminService.getAdmin(id).subscribe(
       data => {
         this.admin = data;
+        console.log("Gotten admin")
         console.log(this.admin)
-        console.log("MyToken2")
-        console.log(this.myToken)
       },
       error => {
         console.log(error);
@@ -43,15 +42,27 @@ export class AdministratorComponent implements OnInit {
   }
   
   constructor(private api:ApiService, private adminService: AdminService, private router: Router){
-    // this.getAllAdmins();
-    this.getAdmin(this.id);
     this.admin ={
       last_name: '', first_name: '', email: ''
     };
+    this.myToken = this.getToken();
+    
+    this.myPayload = <JWTPayload> jwtDecode(this.myToken);
+    this.id = this.myPayload.user_id;
+    this.getAdmin(this.id);
   }
 
-  ngOnInit(){
-    // this.adminLogout()
-  }
+  ngOnInit(){}
 
+}
+
+interface JWTPayload {
+  user_id: number;
+  email: string;
+  exp: number;
+  role: string;
+  token_type: string;
+  jti: string;
+  bio: string;
+  phone: string;
 }

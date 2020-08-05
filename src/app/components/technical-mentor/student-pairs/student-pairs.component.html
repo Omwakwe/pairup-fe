@@ -1,43 +1,50 @@
 <div class="text-center">
-    <p class="heading">Pairs</p>
-    <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-4 week">WEEK 2<br><span>22/01/2020 - 26/01/2020</span></div>
-        <div class="col-md-4">
-            <button>Generate pairs</button>
-        </div>
-        <div class="col-md-2"></div>
+    <h1>Student Pairs</h1>
+  <div class="row">
+    <div class="col-md-1">
     </div>
-    <div class="container">
-    <aside class="pair-card">
-        <header>
-            <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%2810%29.jpg" class="pair-image">
-            <p>John Doe</p>
-        </header>
-        <header>
-            <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%2831%29.jpg" class="pair-image">
-            <p>John Doe</p>
-        </header>
-    </aside>
-    <aside class="pair-card">
-        <header>
-            <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%2810%29.jpg" class="pair-image">
-            <p>John Doe</p>
-        </header>
-        <header>
-            <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%2831%29.jpg" class="pair-image">
-            <p>John Doe</p>
-        </header>
-    </aside>
-    <aside class="pair-card">
-        <header>
-            <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%2810%29.jpg" class="pair-image">
-            <p>John Doe</p>
-        </header>
-        <header>
-            <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%2831%29.jpg" class="pair-image">
-            <p>John Doe</p>
-        </header>
-    </aside>
+    <div class="col-md-6 week">
+        <form class="form-inline">
+            <label for="pairDuration">Pick a date: </label>
+            <input class="form-control" type="date" id="pairDuration" name="pairDuration" [(ngModel)]="pairDuration">
+            <input type="submit" class="submit_date btn form-control" (click)="pairDate()">
+          </form>
     </div>
+    <div class="col-md-4">
+      <button>Generate pairs</button>
+    </div>
+    <div class="col-md-1"></div>
+  </div>
+  <div class="container">
+    <aside class="pair-card">
+      <header>
+        <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%2810%29.jpg" class="pair-image">
+        <p>John Doe</p>
+      </header>
+      <header>
+        <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%2831%29.jpg" class="pair-image">
+        <p>John Doe</p>
+      </header>
+    </aside>
+    <aside class="pair-card">
+      <header>
+        <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%2810%29.jpg" class="pair-image">
+        <p>John Doe</p>
+      </header>
+      <header>
+        <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%2831%29.jpg" class="pair-image">
+        <p>John Doe</p>
+      </header>
+    </aside>
+    <aside class="pair-card">
+      <header>
+        <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%2810%29.jpg" class="pair-image">
+        <p>John Doe</p>
+      </header>
+      <header>
+        <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%2831%29.jpg" class="pair-image">
+        <p>John Doe</p>
+      </header>
+    </aside>
+  </div>
 </div>
