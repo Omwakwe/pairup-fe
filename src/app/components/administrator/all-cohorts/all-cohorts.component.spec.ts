@@ -1,4 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { AllCohortsComponent } from './all-cohorts.component';
 
@@ -8,7 +10,8 @@ describe('AllCohortsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AllCohortsComponent ]
+      declarations: [ AllCohortsComponent ],
+      imports:[ RouterTestingModule, HttpClientTestingModule ]
     })
     .compileComponents();
   }));
