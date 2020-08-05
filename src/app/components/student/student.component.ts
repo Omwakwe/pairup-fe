@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { StudentService } from '../../services/student/student.service';
+import { Router } from '@angular/router';
 import * as jwtDecode from 'jwt-decode';
 
 @Component({
@@ -19,6 +20,11 @@ export class StudentComponent implements OnInit {
     return localStorage.getItem('token')
   }
 
+  studentLogout(){
+    this.studentService.studentLogout()
+    this.router.navigate(['/home']);
+  }
+
   ngOnInit(): void {
   }
 
@@ -36,7 +42,7 @@ export class StudentComponent implements OnInit {
     )
   }
 
-  constructor(private studentService:StudentService) { 
+  constructor(private studentService:StudentService, private router: Router) { 
     this.student ={
       last_name: '', first_name: '', email: ''
     };

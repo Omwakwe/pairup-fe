@@ -14,6 +14,7 @@ export class MentorService {
   private baseurl = "https://pair-app-v1.herokuapp.com";
   private mentorloginurl = "https://pair-app-v1.herokuapp.com/auth/jwt/token/";
   private refreshtokenurl = "https://pair-app-v1.herokuapp.com/api/token/refresh/";
+  private mentorurl = "https://pair-app-v1.herokuapp.com/mentors/";
   
   constructor(private http: HttpClient) { }
 
@@ -23,20 +24,20 @@ export class MentorService {
     const token = authResult.access;
     const payload = <JWTPayload> jwtDecode(token);
     const expiresAt = moment.unix(payload.exp);
-    // if (payload.role == "student"){
-    //   console.log("PAYLOAD")
-    //   console.log(payload)
-    //   localStorage.setItem('token', authResult.access);
-    //   localStorage.setItem('expires_at', JSON.stringify(expiresAt.valueOf()));
-    // }
-    console.log("PAYLOAD")
-    console.log(payload)
-    console.log("Token")
-    console.log(token)
-    console.log("Before SetItem")
-    localStorage.setItem('token', token);
-    console.log("After SetItem")
-    localStorage.setItem('expires_at', JSON.stringify(expiresAt.valueOf()));
+    if (payload.role == "mentor"){
+      console.log("PAYLOAD")
+      console.log(payload)
+      localStorage.setItem('token', authResult.access);
+      localStorage.setItem('expires_at', JSON.stringify(expiresAt.valueOf()));
+    }
+    // console.log("PAYLOAD")
+    // console.log(payload)
+    // console.log("Token")
+    // console.log(token)
+    // console.log("Before SetItem")
+    // localStorage.setItem('token', token);
+    // console.log("After SetItem")
+    // localStorage.setItem('expires_at', JSON.stringify(expiresAt.valueOf()));
   }
 
   get token(): string {
@@ -79,7 +80,6 @@ export class MentorService {
   getExpiration() {
     const expiration = localStorage.getItem('expires_at');
     const expiresAt = JSON.parse(expiration);
-
     return moment(expiresAt);
   }
 
@@ -89,6 +89,11 @@ export class MentorService {
 
   mentorLoggedOut() {
     return !this.mentorLoggedIn();
+  }
+
+  getMentor(id): Observable<any>{
+    return this.http.get(this.mentorurl + id + "/",
+    {headers: this.httpHeaders})
   }
 
 }

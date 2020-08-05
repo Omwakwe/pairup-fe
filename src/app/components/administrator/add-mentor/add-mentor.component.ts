@@ -30,7 +30,6 @@ export class AddMentorComponent implements OnInit {
   }
 
   RegisterMentor = () => {
-    // alert("COHORT" + this.cohort.cohort_name)
     this.adminService.RegisterMentor(this.mentor).subscribe({
       next: (data) => {
         this.returned_mentor = data;
@@ -38,8 +37,8 @@ export class AddMentorComponent implements OnInit {
       },
       error: (err) => {
         (this.errorMessage = err);
-        // alert(err);
       },
   });
+  
 }
 }
