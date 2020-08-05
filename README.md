@@ -1,11 +1,10 @@
 # PairupFe
 
-#Live link
-https://pedantic-rosalind-47f797.netlify.app/home
-
 ## Description
 An application that automatically pairs students
 
+# Live link
+https://pedantic-rosalind-47f797.netlify.app/home
 
 ## Setup/Installation Requirements
 To setup this project, you will need to access it from github then :
