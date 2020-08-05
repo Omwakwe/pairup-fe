@@ -3,8 +3,18 @@ h2{
     border-bottom: 2px solid #ea4C89;
     margin: 0 0 1.5rem;
     height: 70px;
-    margin-top: 2rem;
+    margin-top: 1rem;
     line-height: 66px;
     font-weight: 800;
     color: #14213D;
+    text-transform: uppercase;
+  }
+
+  .table .thead-dark th {
+    background-color: #14213D;
+    border-color: #14213D;
+  }
+
+  td{
+    font-size: 1rem;
   }

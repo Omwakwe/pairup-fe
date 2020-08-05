@@ -7,4 +7,14 @@ h2{
     line-height: 66px;
     font-weight: 800;
     color: #14213D;
+    text-transform: uppercase;
+  }
+
+  .table .thead-dark th {
+    background-color: #14213D;
+    border-color: #14213D;
+  }
+
+  td{
+    font-size: 1rem;
   }
