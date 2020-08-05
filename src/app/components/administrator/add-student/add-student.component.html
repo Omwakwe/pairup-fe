@@ -1,26 +1,30 @@
 <div class="student-container">
   <h1>New Student</h1>
   <form>
-    <div class="form-group">
-      <label for="inputAddress">Email Address</label>
-      <input type="email"   [(ngModel)]="student.email" name= "student.email" class="form-control" id="inputAddress" placeholder="technicalstudent@email.com">
-    </div>
-    <div class="form-group">
-      <label for="inputAddress">First Name</label>
-      <input type="email"   [(ngModel)]="student.first_name" name= "student.first_name" class="form-control" id="inputAddress" placeholder="first name">
-    </div>
-      <div class="form-group">
-        <label for="inputAddress">Last Name</label>
-        <input type="email"   [(ngModel)]="student.last_name" name= "student.last_name" class="form-control" id="inputAddress" placeholder="last name">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputAddress">First Name</label>
+        <input type="email" [(ngModel)]="student.first_name" name="student.first_name" class="form-control"
+          id="inputAddress" placeholder="first name">
       </div>
-    <div class="form-group">
-      <label for="inputAddress">Username</label>
-      <input type="email"   [(ngModel)]="student.user_name" name= "student.user_name" class="form-control" id="inputAddress" placeholder="Username">
+      <div class="form-group col-md-6">
+        <label for="inputAddress">Last Name</label>
+        <input type="email" [(ngModel)]="student.last_name" name="student.last_name" class="form-control"
+          id="inputAddress" placeholder="last name">
+      </div>
     </div>
-    <!-- <div class="form-group">
-      <label for="inputAddress">Cohort</label>
-      <input type="email"   [(ngModel)]="student.cohort" name= "student.cohort" class="form-control" id="inputAddress" placeholder="Cohort">
-    </div> -->
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputAddress">Email Address</label>
+        <input type="email" [(ngModel)]="student.email" name="student.email" class="form-control" id="inputAddress"
+          placeholder="technicalstudent@email.com">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputAddress">Username</label>
+        <input type="email" [(ngModel)]="student.user_name" name="student.user_name" class="form-control"
+          id="inputAddress" placeholder="Username">
+      </div>
+    </div>
     <div class="form-group">
       <label for="inputAddress">Cohort</label>
       <select class="custom-select" [(ngModel)]="student.cohort" name="student.cohort">
@@ -29,21 +33,24 @@
     </div>
     <div class="form-group">
       <label for="inputAddress">Bio</label>
-      <input type="email"   [(ngModel)]="student.bio" name= "student.bio" class="form-control" id="inputAddress" placeholder="bio">
-    </div>  
+      <input type="email" [(ngModel)]="student.bio" name="student.bio" class="form-control" id="inputAddress"
+        placeholder="bio">
+    </div>
     <div class="form-group">
       <label for="inputAddress">Phone</label>
-      <input type="email"   [(ngModel)]="student.phone" name= "student.phone" class="form-control" id="inputAddress" placeholder="Phone">
-    </div>  
+      <input type="email" [(ngModel)]="student.phone" name="student.phone" class="form-control" id="inputAddress"
+        placeholder="Phone">
+    </div>
 
     <div class="form-group">
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" id="check" ng-model="checked"> 
+        <input class="form-check-input" type="checkbox" id="check" ng-model="checked">
         <label class="form-check-label" for="gridCheck">
           I am sure all data entered is correct
         </label>
       </div>
     </div>
-    <button type="submit" (click)="RegisterStudent()" ng-model="button" ng-disabled="checked" class="btn" id="register">Register student</button>
+    <button type="submit" (click)="RegisterStudent()" ng-model="button" ng-disabled="checked" class="btn"
+      id="register">Register student</button>
   </form>
 </div>

@@ -1,5 +1,6 @@
 .student-container{
-    padding: 4rem 2rem 2rem;
+    /* padding: 4rem 2rem 2rem; */
+    padding-top: 1rem;
     height: 100vh;
 }
 h1{
@@ -8,9 +9,13 @@ h1{
     text-align: center;
     font-weight: 800;
     color: #14213D;
+    border-bottom: 2px solid #ea4C89;
+    margin: 0 0 1.5rem;
+    height: 70px;
+    line-height: 66px;
 }
 form{
-    padding: 2rem 3rem;
+    padding: 0rem 3rem;
 }
 .btn{
     background: #ea4c89;
