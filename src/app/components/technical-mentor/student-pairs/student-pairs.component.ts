@@ -8,12 +8,16 @@ import { Component, OnInit } from '@angular/core';
 export class StudentPairsComponent implements OnInit {
 
   pairDuration;
+  date; 
   pairDate(){
+    if (this.date.value == "undefined"){
+      alert("Please select a start date for the pair duration")
+    }
     console.log("DURATION");  
-  console.log(this.pairDuration);
+    console.log(this.pairDuration);
   }
+  
   constructor() {
-    this.pairDate();
    }
 
   ngOnInit(): void {
