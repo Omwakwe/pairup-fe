@@ -50,9 +50,6 @@ export class AdministratorComponent implements OnInit {
     this.myPayload = <JWTPayload> jwtDecode(this.myToken);
     this.id = this.myPayload.user_id;
     this.getAdmin(this.id);
-    console.log("MY PAYLOAD")
-    console.log(this.myPayload)
-    console.log(this.id)
   }
 
   ngOnInit(){}
