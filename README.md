@@ -10,7 +10,7 @@ This is an application that automatically pairs students. An administrator adds 
 | Sign In                                  | Input email and password and click the    | If login is successful, the user is      |
 |                                          | sign in button                            | redirected to their respective dashboard |
 |                                          |                                           |                                          |
-|     ADMIN                                |                                           |                                          |
+|     ADMINISTRATOR                        |                                           |                                          |
 | Add a cohort                             | Click on the add a cohort on the sidenav  | You will be navigated to a page that     |
 |                                          | and submit cohort details                 | has a form to register the cohort        |
 |                                          |                                           |                                          |
