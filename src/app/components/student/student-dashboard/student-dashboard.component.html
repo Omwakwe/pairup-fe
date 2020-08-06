@@ -1,23 +1,27 @@
 <main>
-    <h1>Dashboard</h1>
-    <div class="flex1">
-        <div class="data fade-in"><span>COHORT</span>MC28</div>
-        <div class="data fade-in"><span>TECHNICAL MENTOR</span>Starford Omwake</div>
-    </div>
-    <div class="flex2">
-        <div class="parentdiv">
-            <h2>YOUR PAIR</h2>
-            <div class="pairdiv" *ngFor='let student of returned_data'>
-                <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%2810%29.jpg"
-                    class="pair-image">
-                <div class="pair-info">
-                    <div class="pair-data"><span>Name:</span>{{student.first_name}} {{student.last_name}}</div>
-                    <div class="pair-data"><span>Contact:</span>{{student.phone}}</div>
-                    <div class="pair-data"><span>Email:</span><a href="{{student.email}}"
-                            target="_blank">{{student.email}}</a></div>
-                </div>
-            </div>
-            <!-- <div class="pairdiv">
+  <h1>Dashboard</h1>
+  <div class="flex1">
+    <div class="data fade-in"><span>COHORT</span>MC28</div>
+    <div class="data fade-in"><span>TECHNICAL MENTOR</span>Starford Omwake</div>
+  </div>
+  <div class="flex2">
+    <div class="parentdiv">
+      <h2>YOUR PAIR</h2>
+      <div *ngIf="returned_data">
+        <div class="pairdiv" *ngFor='let student of returned_data'>
+          <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%2810%29.jpg" class="pair-image">
+          <div class="pair-info">
+            <div class="pair-data"><span>Name:</span>{{student.first_name}} {{student.last_name}}</div>
+            <div class="pair-data"><span>Contact:</span>{{student.phone}}</div>
+            <div class="pair-data"><span>Email:</span><a href="mailto:{{student.email}}"
+                target="_blank">{{student.email}}</a></div>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="!returned_data">
+        <p class="text-center not-yet-assigned">You have not yet been assigned a pair yet. Kindly contact your mentor on the way forward.</p>
+      </div>
+      <!-- <div class="pairdiv">
                 <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%2810%29.jpg"
                     class="pair-image">
                 <div class="pair-info">
@@ -27,32 +31,33 @@
                             target="_blank">student@email.com</a></div>
                 </div>
             </div> -->
-        </div>
-        <div class="calendar-wrapper">
-            <button id="btnPrev" type="button">Prev</button>
-            <button id="btnNext" type="button">Next</button>
-            <div id="divCal"></div>
-        </div>
     </div>
-    <div class="flex-grid">
-        <div class="parentdiv">
-            <h2>Quote of the day</h2>
-            <div class="row">
-                <div class="col-md-2"></div>
-                <div class="col-md-8">
-                    <div class="quote text-center">
-                        <p><q> Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live </q>
-                        </p>
-                        <p class="blockquote-footer"><cite title="Source Title">John Woods</cite></p>
-                    </div>
-                </div>
-                <div class="col-md-2"></div>
-            </div>
-        </div>
+    <div class="calendar-wrapper">
+      <button id="btnPrev" type="button">Prev</button>
+      <button id="btnNext" type="button">Next</button>
+      <div id="divCal"></div>
     </div>
-    <footer class="text-center">
-        <div class="mb-2">
-          <small>&#169; Moringa School 2020</small>
+  </div>
+  <div class="flex-grid">
+    <div class="parentdiv">
+      <h2>Quote of the day</h2>
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+          <div class="quote text-center">
+            <p><q> Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows
+                where you live </q>
+            </p>
+            <p class="blockquote-footer"><cite title="Source Title">John Woods</cite></p>
+          </div>
         </div>
-    </footer>
+        <div class="col-md-2"></div>
+      </div>
+    </div>
+  </div>
+  <footer class="text-center">
+    <div class="mb-2">
+      <small>&#169; Moringa School 2020</small>
+    </div>
+  </footer>
 </main>
