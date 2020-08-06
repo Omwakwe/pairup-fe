@@ -17,6 +17,7 @@ export class StudentDashboardComponent implements OnInit {
   id;
   myPayload;
   returned_data;
+  student_id = 7
   getToken(){
     return localStorage.getItem('token')
   }
@@ -26,6 +27,7 @@ export class StudentDashboardComponent implements OnInit {
     this.studentService.getStudent(id).subscribe(
       data => {
         this.student = data;
+        this.student_id = this.student.id;
         console.log("Gotten admin")
         console.log(this.student.id)
       },
@@ -36,7 +38,7 @@ export class StudentDashboardComponent implements OnInit {
   }
   GetStudentPair = () => {    
     // var body = "cohort_id=" + this.student.user_id;
-    var body = "student_id=" + this.student.id;
+    var body = "student_id=" + this.student_id;
 
     console.log("MY DATA", body)
     this.pairupService.GetStudentPair(body).subscribe({
@@ -60,11 +62,14 @@ export class StudentDashboardComponent implements OnInit {
     // console.log("student payload")
     // console.log(this.myPayload.cohort)
     // this.id = this.myPayload.user_id;
-    this.getStudent(this.id);
+    this.GetStudentPair();
+    
   }
 
   ngOnInit() {
-    this.GetStudentPair();
+    this.getStudent(this.student.id);
+    console.log("ID", this.student.id)
+    
   }
 
 }
