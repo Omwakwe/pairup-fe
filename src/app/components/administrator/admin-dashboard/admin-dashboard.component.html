@@ -1,26 +1,22 @@
 <main>
   <h1>Dashboard</h1>
-  <div class="flex1">
-    <div class="data fade-in"><span>COHORTS</span>{{cohorts.length}}</div>
-    <div class="data fade-in"><span>TECHNICAL MENTORS</span>{{mentors.length}}</div>
-    <div class="data fade-in"><span>STUDENTS</span>{{students.length}}</div>
-  </div>
-  <div class="flex2">
-    <div>
-      <h2>Headline</h2>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="flex-column">
+        <div class="dashboard-data fade-in"><span>COHORTS</span>{{cohorts.length}}</div>
+        <div class="dashboard-data fade-in"><span>TECHNICAL MENTORS</span>{{mentors.length}}</div>
+        <div class="dashboard-data fade-in"><span>STUDENTS</span>{{students.length}}</div>
+      </div>
     </div>
-    <div class="calendar-wrapper">
-      <button id="btnPrev" type="button">Prev</button>
-      <button id="btnNext" type="button">Next</button>
-      <div id="divCal"></div>
-    </div>
-  </div>
-  <div class="flex-grid">
-    <div>
-      <h2>Headline</h2>
-      <!-- <p *ngFor='let cohort of cohorts' class="cohort ml-3">{{cohort.cohort_name}}</p> -->
+    <div class="col-md-6">
+      <div class="calendar-wrapper">
+        <button id="btnPrev" type="button">Prev</button>
+        <button id="btnNext" type="button">Next</button>
+        <div id="divCal"></div>
+      </div>
     </div>
   </div>
+  
   <footer class="text-center">
     <div class="mb-2">
       <small>&#169; Moringa School 2020</small>

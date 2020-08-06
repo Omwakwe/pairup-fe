@@ -590,3 +590,8 @@
   .cohort{
     color: #444;
   }
+
+  .dashboard-data{
+    padding: 0;
+    margin: 1.2rem 0rem;
+  }

@@ -54,7 +54,7 @@ a {
 
 .calendar-wrapper {
   line-height: 1.5;
-  width: 19rem;
+  width: 19rem !important;
   margin: 0 auto 2em;
   padding: 2em;
   border: 1px solid #dcdcff;
@@ -183,9 +183,44 @@ q:after {
 }
 
 .logoutButton{
-  margin: 0;
+  margin: 0 -8rem 1rem 0;
   border: none;
   background: #14213D;
   color: #fff;
 }
+.logoutButton i{
+  margin-right: 0.4rem;
+}
 
+.flex-column{
+  display: flex;
+  flex-direction: column;
+  margin: 3rem 0;
+}
+
+.dashboard-data {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 900;
+  margin: 2rem 5rem;
+}
+
+@media screen and (max-width: 728px) {
+  .dashboard-data {
+    margin: 2rem 0rem;
+  }
+}
+
+.dashboard-data span {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+/* .dashboard-data {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+} */

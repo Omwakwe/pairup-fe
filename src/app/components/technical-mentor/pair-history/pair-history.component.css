@@ -1,25 +1,130 @@
-.history-container{
-    padding: 4rem 2rem 2rem;
-    height: 100vh;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Open+Sans&display=swap');
+
+body {
+  opacity: 0;
+  -webkit-animation: moveIn 1s 1.1s ease forwards;
+  animation: moveIn 1s 1.1s ease forwards;
+  font-family: 'Open Sans', sans-serif;
 }
-h1{
-    text-transform: uppercase;
-    font-size: 2.5rem;
-    text-align: center;
-    font-weight: 800;
-    color: #14213D;
+
+.history-container {
+  padding: 4rem 4rem 2rem;
+  height: 100vh;
 }
-.table-responsive-md{
-    padding: 2rem 3rem;
+
+.table-responsive-md {
+  padding: 2rem 3rem;
 }
-.table{
-    height: auto;
+
+.table {
+  height: auto;
 }
-td{
-    height: 2rem;
-    font-size: 0.9rem;
+
+td {
+  height: 2rem;
+  font-size: 0.9rem;
 }
-.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
-    background-color: #14213D;
-    color: #fff;
+
+.table-hover tbody tr:hover td,
+.table-hover tbody tr:hover th {
+  background-color: #14213D;
+  color: #fff;
+}
+
+.submit_date {
+  background: #14213D;
+  color: #fff;
+  border: none;
+}
+
+form {
+  display: flex;
+  flex-direction: row;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  text-align: center;
+  font-weight: 800;
+  color: #14213D;
+  border-bottom: 2px solid #ea4C89;
+  margin: 0 0 1.5rem;
+  height: 70px;
+  line-height: 66px;
+}
+
+.container {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.pair-card {
+  background: #fff;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  margin: 1rem 2rem;
+  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1), 0px 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+@media screen and (max-width: 728px) {
+  .pair-card {
+    margin: 1rem 0rem;
+    width: 35rem;
   }
+}
+
+.pair-card header {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  color: #14213D;
+}
+
+.pair-card header p {
+  font-weight: 700;
+  font-size: 1rem;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.pair-image {
+  width: 9rem;
+  height: 9rem;
+  padding: 1rem;
+  border-radius: 2rem;
+  overflow: hidden;
+  object-fit: cover;
+}
+
+@-webkit-keyframes moveIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes moveIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.description{
+  font-size: 1.2rem;
+  margin-top: 4rem;
+  text-align: center;
+  padding: 0 4rem 2rem;
+}

@@ -16,7 +16,7 @@ export class AddStudentComponent implements OnInit {
 
   errorMessage = 'Error when creating student'
   constructor(private adminService:AdminService){
-    this.RegisterStudent();
+    // this.RegisterStudent();
     this.getAllCohorts();
   }
   ngOnInit() {
@@ -32,6 +32,7 @@ export class AddStudentComponent implements OnInit {
   }
 
   RegisterStudent = () => {
+    console.log("MY STUDENT", this.student)
     this.adminService.RegisterStudent(this.student).subscribe({
       next: (data) => {
         this.returned_student = data;
@@ -39,7 +40,7 @@ export class AddStudentComponent implements OnInit {
       },
       error: (err) => {
         (this.errorMessage = err);
-        // alert(this.errorMessage)
+        alert("Error when creating student. Please check that all data provided is provided and is correct.")
       },
   });
 }

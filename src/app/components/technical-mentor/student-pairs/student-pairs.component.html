@@ -4,16 +4,21 @@
     <div class="col-md-1">
     </div>
     <div class="col-md-6 week">
-        <form class="form-inline">
-            <label for="pairDuration">Pick a date: </label>
-            <input class="form-control" type="date" id="pairDuration" name="pairDuration" [(ngModel)]="pairDuration">
-            <input type="submit" class="submit_date btn form-control" (click)="pairDate()">
-          </form>
+        <!-- <form class="form-inline">
+             <label for="pairDuration">Pick a date: </label>
+            <input class="form-control" type="date" id="pairDuration" name="pairDuration"  #Duration (keyup)="onKey(Duration.value)" placeholder="Select Pair duration">
+             
+            <input placeholder="Pair duration start date" class="textbox-n form-control" type="text" onfocus="(this.type='date')" id="date" name="pairDuration" [(ngModel)]="pairDuration" aria-describedby="basic-addon2">
+            <span type="submit" class="submit_date btn form-control" (click)="pairDate()" value= "Generate Pairs"></span>
+          </form> -->
+          <div class="input-group mb-3">
+            <input placeholder="Pair duration start date" class="textbox-n form-control" type="text" onfocus="(this.type='date')" id="date" required name="pairDuration" [(ngModel)]="pairDuration" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+              <span type="submit" class="submit_date btn form-control" (click)="GeneratePairs()" value= "Generate Pairs">Generate Pairs</span>
+            </div>
+          </div>
     </div>
-    <div class="col-md-4">
-      <button>Generate pairs</button>
-    </div>
-    <div class="col-md-1"></div>
+    <div class="col-md-3"></div>
   </div>
   <div class="container">
     <aside class="pair-card">
