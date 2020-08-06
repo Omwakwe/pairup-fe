@@ -32,6 +32,7 @@ export class AddStudentComponent implements OnInit {
   }
 
   RegisterStudent = () => {
+    console.log("MY STUDENT", this.student)
     this.adminService.RegisterStudent(this.student).subscribe({
       next: (data) => {
         this.returned_student = data;

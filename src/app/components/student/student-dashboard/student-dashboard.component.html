@@ -7,17 +7,17 @@
     <div class="flex2">
         <div class="parentdiv">
             <h2>YOUR PAIR</h2>
-            <div class="pairdiv">
+            <div class="pairdiv" *ngFor='let student of returned_data'>
                 <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%2810%29.jpg"
                     class="pair-image">
                 <div class="pair-info">
-                    <div class="pair-data"><span>Name:</span>Crystal Alice</div>
-                    <div class="pair-data"><span>Contact:</span>+123 456 789</div>
-                    <div class="pair-data"><span>Email:</span><a href="mailto:webmaster@example.com"
-                            target="_blank">student@email.com</a></div>
+                    <div class="pair-data"><span>Name:</span>{{student.first_name}} {{student.last_name}}</div>
+                    <div class="pair-data"><span>Contact:</span>{{student.phone}}</div>
+                    <div class="pair-data"><span>Email:</span><a href="{{student.email}}"
+                            target="_blank">{{student.email}}</a></div>
                 </div>
             </div>
-            <div class="pairdiv">
+            <!-- <div class="pairdiv">
                 <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%2810%29.jpg"
                     class="pair-image">
                 <div class="pair-info">
@@ -26,7 +26,7 @@
                     <div class="pair-data"><span>Email:</span><a href="mailto:webmaster@example.com"
                             target="_blank">student@email.com</a></div>
                 </div>
-            </div>
+            </div> -->
         </div>
         <div class="calendar-wrapper">
             <button id="btnPrev" type="button">Prev</button>

@@ -123,6 +123,11 @@ export class AdminService {
     return this.http.get(this.adminurl + id + "/",
     {headers: this.httpHeaders})
   }
+
+  getCohort(cohortId): Observable<any>{
+    return this.http.get(this.cohorturl + cohortId + "/",
+    {headers: this.httpHeaders})
+  }
 }
 
 @Injectable()

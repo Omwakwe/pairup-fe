@@ -15,6 +15,7 @@ export class MentorService {
   private mentorloginurl = "https://pair-app-v1.herokuapp.com/auth/jwt/token/";
   private refreshtokenurl = "https://pair-app-v1.herokuapp.com/api/token/refresh/";
   private mentorurl = "https://pair-app-v1.herokuapp.com/mentors/";
+  private cohorturl = "https://pair-app-v1.herokuapp.com/cohorts/";
   
   constructor(private http: HttpClient) { }
 
@@ -93,6 +94,11 @@ export class MentorService {
 
   getMentor(id): Observable<any>{
     return this.http.get(this.mentorurl + id + "/",
+    {headers: this.httpHeaders})
+  }
+
+  getCohort(id): Observable<any>{
+    return this.http.get(this.cohorturl + id + "/",
     {headers: this.httpHeaders})
   }
 

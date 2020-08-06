@@ -1,32 +1,42 @@
 <div class="history-container">
-  <h1>Pairs for week 2</h1>
-  <div class="table-responsive-md">
-    <table class="table table-hover">
-      <caption>Pairs for week 2</caption>
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Student 1</th>
-          <th scope="col">Student 2</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Mark odongo opndi</td>
-          <td>Otto</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Larry the Bird</td>
-          <td>Otto</td>
-        </tr>
-      </tbody>
-    </table>
+  <h1>Pair History</h1>
+  <div class="row">
+    <div class="col md-6"></div>
+    <div class="col-md-6">
+      <div class="input-group mb-3">
+        <input placeholder="History week" class="textbox-n form-control" type="text" onfocus="(this.type='date')" id="date" required name="pairDuration" [(ngModel)]="pairDuration" aria-describedby="basic-addon2">
+        <div class="input-group-append">
+          <span type="submit" class="submit_date btn form-control" (click)="GenerateHistory()" value= "Generate Pairs">Get History</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <aside class="pair-card" *ngFor='let pair of returned_data'>
+      <header *ngFor='let student of pair'>
+        <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%2810%29.jpg" class="pair-image">
+        <p>{{student.first_name}} {{student.last_name}}</p>
+      </header>
+    </aside>
+    <!-- <aside class="pair-card">
+      <header>
+        <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%2810%29.jpg" class="pair-image">
+        <p>John Doe</p>
+      </header>
+      <header>
+        <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%2831%29.jpg" class="pair-image">
+        <p>John Doe</p>
+      </header>
+    </aside>
+    <aside class="pair-card">
+      <header>
+        <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%2810%29.jpg" class="pair-image">
+        <p>John Doe</p>
+      </header>
+      <header>
+        <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%2831%29.jpg" class="pair-image">
+        <p>John Doe</p>
+      </header>
+    </aside> -->
   </div>
 </div>

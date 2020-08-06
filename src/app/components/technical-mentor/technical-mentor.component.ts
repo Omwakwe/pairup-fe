@@ -61,6 +61,7 @@ interface JWTPayload {
   exp: number;
   role: string;
   token_type: string;
+  cohort: string;
   jti: string;
   bio: string;
   phone: string;
