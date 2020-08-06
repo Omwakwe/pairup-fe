@@ -4,6 +4,9 @@
 ## Description
 This is an application that automatically pairs students. An administrator adds cohorts, technical mentors and students. A technical mentor generates the weekly pairs and a student views their pair for the week.
 
+### Live link
+https://pedantic-rosalind-47f797.netlify.app/home
+
 ### BDD Specifications Table
 |        User Requirements                 |           Input                           |           Output                         |
 |------------------------------------------|-------------------------------------------|------------------------------------------|
