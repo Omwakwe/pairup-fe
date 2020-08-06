@@ -68,8 +68,7 @@ constructor(private pairupService:PairupService, private mentorService:MentorSer
     last_name: '', first_name: '', email: ''
   };
 }
-ngOnInit(){
-  
+ngOnInit(){  
    this.myToken = this.getToken();
    this.myPayload = <JWTPayload> jwtDecode(this.myToken);
    this.id = this.myPayload.user_id;

@@ -1,22 +1,18 @@
 <main>
   <h1>Dashboard</h1>
-  <div class="flex1">
-    <div class="data fade-in"><span>COHORT</span>{{cohort.cohort_name}}</div>
-    <div class="data fade-in"><span>STUDENTS</span>{{tmStudents.length}}</div>
-  </div>
-  <div class="flex2">
-    <div>
-      <h2>Headline</h2>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="flex-column">
+        <div class="dashboard-data fade-in"><span>COHORT</span>{{mentor.cohort}}</div>
+        <div class="dashboard-data fade-in"><span>STUDENTS</span>{{tmStudents.length}}</div>
+      </div>
     </div>
+    <div class="col-md-6">
     <div class="calendar-wrapper">
       <button id="btnPrev" type="button">Prev</button>
       <button id="btnNext" type="button">Next</button>
       <div id="divCal"></div>
     </div>
-  </div>
-  <div class="flex-grid">
-    <div>
-      <h2>Headline</h2>
     </div>
   </div>
   <footer class="text-center">

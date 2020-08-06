@@ -58,8 +58,9 @@ const routes: Routes = [
     component: TechnicalMentorComponent,
     children: [
       { path: 'dashboard', component: MentorDashboardComponent},
-      { path: 'pairs', component: StudentPairsComponent},
-      { path: 'history', component: PairHistoryComponent},
+      // { path: 'pairs', component: StudentPairsComponent},
+      // { path: 'history', component: PairHistoryComponent},
+      { path: 'pairs', component: PairHistoryComponent},
       { path: 'mentor-profile', component: MentorProfileComponent},
       { path: 'tm-students', component: TmStudentsComponent},
       { path: '', redirectTo: 'dashboard', pathMatch: 'full'},
