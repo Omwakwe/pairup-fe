@@ -14,7 +14,7 @@ export class StudentDashboardComponent implements OnInit {
 
   student;
   myToken;
-  id = 87;
+  id;
   myPayload;
   returned_data;
   getToken(){
@@ -26,8 +26,8 @@ export class StudentDashboardComponent implements OnInit {
     this.studentService.getStudent(id).subscribe(
       data => {
         this.student = data;
-        // console.log("Gotten admin")
-        // console.log(this.student)
+        console.log("Gotten admin")
+        console.log(this.student.id)
       },
       error => {
         console.log(error);
@@ -36,7 +36,7 @@ export class StudentDashboardComponent implements OnInit {
   }
   GetStudentPair = () => {    
     // var body = "cohort_id=" + this.student.user_id;
-    var body = "student_id=" + this.id;
+    var body = "student_id=" + this.student.id;
 
     console.log("MY DATA", body)
     this.pairupService.GetStudentPair(body).subscribe({
