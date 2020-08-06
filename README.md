@@ -2,7 +2,7 @@
 
 
 ## Description
-An application that automatically pairs students
+This is an application that automatically pairs students. An administrator adds cohorts, technical mentors and students. A technical mentor generates the weekly pairs and a student views their pair for the week.
 
 ### BDD Specifications Table
 |        User Requirements                 |           Input                           |           Output                         |
